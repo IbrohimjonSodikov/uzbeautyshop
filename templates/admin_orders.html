@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .single-line {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .actions-buttons {
+        display: flex;
+        gap: 10px;
+    }
+</style>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Admin - All Orders</h1>
+    
+    <!-- Table for all orders -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Full name</th>
+                    <th>Products</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th>Order Date</th>
+                    <th>Shipping Address</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in order_data %}
+                    <tr>
+                        <td>{{ data.order.id }}</td>
+                        <td>{{ data.order.customer.username }}</td>
+                        <td>
+                            {{ data.order.fullname }}
+                        </td>
+                        <td class="single-line">
+                            {% for item in data.order.orderitem_set.all %}
+                                <div>{{ item.product.name }}</div>
+                            {% endfor %}
+                        </td>
+                        
+                        <td>
+                            {% for item in data.order.orderitem_set.all %}
+                                <div>{{ item.quantity }}</div>
+                            {% endfor %}
+                        </td>
+                        <td>{{ data.order.total_price }} sum</td>
+                        <td>{{ data.order.created_at|date:"F j, Y" }}</td>
+                        <td>{{ data.order.address }}</td>
+                        <td>{{ data.order.status }}</td>
+                        <td class="actions-buttons">
+                            
+                            <!-- Delete button -->
+                            <form method="post" action="{% url 'admin_order_delete' data.order.id %}" style="display:inline;">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+
+                            <!-- Option to change order status -->
+                            <form method="post" action="{% url 'admin_order_change_status' data.order.id %}" style="display:inline;">
+                                {% csrf_token %}
+                                <select name="status" class="form-control form-control-sm" style="width: 150px;">
+                                    <option value="Pending" {% if data.order.status == 'Pending' %}selected{% endif %}>Pending</option>
+                                    <option value="Shipped" {% if data.order.status == 'Shipped' %}selected{% endif %}>Shipped</option>
+                                    <option value="Delivered" {% if data.order.status == 'Delivered' %}selected{% endif %}>Delivered</option>
+                                </select>
+                                <button type="submit" class="btn btn-warning btn-sm mt-2">Change Status</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="9" class="text-center">No orders found.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

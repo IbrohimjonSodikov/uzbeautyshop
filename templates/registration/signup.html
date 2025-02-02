@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% block title %}{% trans "Sign up" %}{% endblock title %}
+
+<body class="bg-light">
+    {% block content %}
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh; margin-top: 5%;">
+        <div class="card shadow-lg p-4 rounded mt-5 mb-5" style="max-width: 500px; width: 100%; border-radius: 16px;">
+            <div class="card-body">
+                <h3 class="text-center mb-4 text-primary font-weight-bold">{% trans "Create an Account"%}</h3>
+                <p class="text-center text-muted mb-4">{% trans "Fill in the details below to sign up and get started."%}</p>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-primary btn-block mt-3" type="submit" style="border-radius: 10px;">
+                        <i class="fas fa-user-plus"></i> {% trans "Sign Up"%}
+                    </button>
+                    <div class="text-center mt-3">
+                        <p class="text-secondary">{% trans "Already have an account?"%}<a href="{% url 'login' %}" class="text-primary">{% trans "Login"%}</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>

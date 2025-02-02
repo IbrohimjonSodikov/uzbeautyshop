@@ -1,0 +1,1135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-31 15:04+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: accounts/forms.py:12 templates/checkout.html:338
+msgid "Phone number"
+msgstr "Номер телефона"
+
+#: products/views.py:40
+msgid "Thank you for your message! We'll get back to you shortly."
+msgstr "Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время."
+
+#: products/views.py:215
+msgid "Product added to your cart! Go to your cart to order"
+msgstr "Товар добавлен в корзину! Перейдите в корзину, чтобы заказать"
+
+#: products/views.py:228
+msgid "Product added to your favorites!"
+msgstr "Товар добавлен в избранное!"
+
+#: products/views.py:321
+msgid "Your cart is empty. Please add something first!"
+msgstr "Ваша корзина пуста. Пожалуйста, сначала добавьте что-нибудь!"
+
+#: products/views.py:351
+msgid "Your order has been successfully placed!"
+msgstr "Ваш заказ успешно оформлен!"
+
+#: templates/about.html:10 templates/base.html:180 templates/base.html:317
+#: templates/base.html:445
+msgid "About Us"
+msgstr "О нас"
+
+#: templates/about.html:11
+msgid ""
+"Discover our story, mission, and vision as we strive to inspire beauty and "
+"confidence around the world."
+msgstr ""
+"Узнайте нашу историю, миссию и видение, ведь мы стремимся вдохновлять "
+"красоту и уверенность в себе по всему миру."
+
+#: templates/about.html:20
+msgid "Our Mission"
+msgstr "Наша цель"
+
+#: templates/about.html:21
+msgid ""
+"We aim to empower every individual by providing them with exceptional beauty "
+"products that not only enhance their appearance but also boost their "
+"confidence. Our commitment is to deliver quality with integrity and passion."
+msgstr ""
+"Мы стремимся расширить возможности каждого, предоставляя исключительную "
+"косметику, продукты, которые не только улучшают внешний вид, но и повышают "
+"уверенность в себе. Наше обязательство - обеспечивать качество с честностью "
+"и любовью."
+
+#: templates/about.html:28
+msgid "Our Vision"
+msgstr "Наши взгляды"
+
+#: templates/about.html:29
+msgid ""
+"To lead the beauty industry by creating a lasting impact on the lives of "
+"millions, making beauty accessible to all while prioritizing sustainability, "
+"inclusivity, and innovation."
+msgstr ""
+"Стать лидером в индустрии красоты, оказывая долгосрочное влияние на жизни "
+"миллионов людей, делая красоту доступной для всех, уделяя приоритетное "
+"внимание устойчивости, инклюзивности и инновациям."
+
+#: templates/about.html:38
+msgid "Our Core Values"
+msgstr "Наши основные ценности"
+
+#: templates/about.html:39
+msgid "The principles that guide us and keep us grounded in everything we do."
+msgstr ""
+"Принципы, которые направляют нас и помогают оставаться стойкими в том, что "
+"мы делаем."
+
+#: templates/about.html:47
+msgid "Passion"
+msgstr "Любовь"
+
+#: templates/about.html:48
+msgid ""
+"Driven by passion, we create beauty with heart, focusing on quality and "
+"detail in everything we do."
+msgstr ""
+"Вдохновленные страстью, мы создаем красоту с душой, уделяя внимание качеству "
+"и деталям в каждом нашем деле."
+
+#: templates/about.html:56
+msgid "Sustainability"
+msgstr "Устойчивость"
+
+#: templates/about.html:57
+msgid ""
+"We prioritize the planet by embracing sustainable practices in our products "
+"and operations."
+msgstr ""
+"Мы ставим планету на первое место, внедряя устойчивые практики в наши "
+"продукты и операции."
+
+#: templates/about.html:65
+msgid "Inclusivity"
+msgstr "Инклюзивность"
+
+#: templates/about.html:66
+msgid ""
+"We believe in inclusivity, offering beauty solutions for all, regardless of "
+"background or identity."
+msgstr ""
+"Мы верим в инклюзивность, предлагая решения для красоты для всех, независимо "
+"от происхождения или идентичности."
+
+#: templates/about.html:74
+msgid "Innovation"
+msgstr "Инновации"
+
+#: templates/about.html:75
+msgid ""
+"Constantly evolving, we push the boundaries of beauty with innovative "
+"products and technologies."
+msgstr ""
+"Постоянно развиваясь, мы расширяем границы красоты с помощью инновационных "
+"продуктов и технологий."
+
+#: templates/about.html:84
+msgid "Join Us in Our Mission"
+msgstr "Присоединяйтесь к нашей миссии"
+
+#: templates/about.html:85
+msgid ""
+"Be a part of our journey as we continue to make a difference in the beauty "
+"world. We welcome you to stay connected with us and be part of the change!"
+msgstr ""
+"Станьте частью нашего пути, пока мы продолжаем изменять мир красоты. Мы "
+"приглашаем вас оставаться с нами и быть частью перемен!"
+
+#: templates/about.html:87
+msgid "Get in Touch "
+msgstr "Связаться с нами"
+
+#: templates/allproducts.html:439 templates/country_products.html:209
+msgid "Categories"
+msgstr "Категории"
+
+#: templates/allproducts.html:463
+msgid ""
+"Tap here to explore categories and choose your perfect match from our "
+"luxurious collection."
+msgstr ""
+"Нажмите здесь, чтобы изучить категории и выбрать идеальный вариант из нашей "
+"роскошной коллекции."
+
+#: templates/allproducts.html:486 templates/country_products.html:249
+msgid "Buy Now"
+msgstr "Купить сейчас"
+
+#: templates/article_detail.html:20
+msgid "All Blogs"
+msgstr "Все блоги"
+
+#: templates/article_detail.html:27
+msgid "Comments"
+msgstr "Комментарии"
+
+#: templates/article_detail.html:53
+msgid "No comments yet. Be the first to comment!"
+msgstr "Пока нет комментариев. Будьте первым, кто оставит комментарий!"
+
+#: templates/article_detail.html:61
+msgid "Leave a Comment"
+msgstr "Оставить комментарий"
+
+#: templates/article_detail.html:72
+msgid "Write your comment here..."
+msgstr "Оставьте свой отзыв здесь..."
+
+#: templates/article_detail.html:77
+msgid "Submit"
+msgstr "Отправить"
+
+#: templates/article_detail.html:81 templates/base.html:197
+#: templates/base.html:333 templates/registration/login.html:28
+#: templates/registration/signup.html:20
+msgid "Login"
+msgstr "Войти"
+
+#: templates/article_detail.html:81
+msgid "to leave a comment"
+msgstr "чтобы оставить комментарий"
+
+#: templates/article_list.html:8
+msgid "Our Blog"
+msgstr "Наш блог"
+
+#: templates/article_list.html:22
+msgid "Read more"
+msgstr "Читать далее"
+
+#: templates/base.html:136 templates/base.html:274
+msgid "Home"
+msgstr "Главная"
+
+#: templates/base.html:139 templates/base.html:277
+msgid "Brands"
+msgstr "Бренды"
+
+#: templates/base.html:142 templates/base.html:281 templates/home.html:87
+msgid "Germany"
+msgstr "Германия"
+
+#: templates/base.html:144 templates/home.html:163
+msgid "All German products"
+msgstr "Все немецкие продукты"
+
+#: templates/base.html:153 templates/base.html:292 templates/home.html:93
+msgid "France"
+msgstr "Франция"
+
+#: templates/base.html:155 templates/home.html:214
+msgid "All French products"
+msgstr "Все французские продукты"
+
+#: templates/base.html:164 templates/base.html:302 templates/home.html:99
+msgid "Italy"
+msgstr "Италия"
+
+#: templates/base.html:166 templates/home.html:266
+msgid "All Italian products"
+msgstr "Все итальянские продукты"
+
+#: templates/base.html:177 templates/base.html:315
+msgid "Blog"
+msgstr "Блог"
+
+#: templates/base.html:182 templates/base.html:318 templates/contactus.html:14
+#: templates/contactus.html:49
+msgid "Contact Us"
+msgstr "Связаться с нами"
+
+#: templates/base.html:185 templates/base.html:321
+msgid "Your profile"
+msgstr "Ваш профил"
+
+#: templates/base.html:187 templates/base.html:323
+msgid "Welcome: "
+msgstr "Добро пожаловать!"
+
+#: templates/base.html:188 templates/base.html:324
+msgid "Order history"
+msgstr "История заказов"
+
+#: templates/base.html:189
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: templates/base.html:190 templates/base.html:326
+msgid "Logout"
+msgstr "Выйти"
+
+#: templates/base.html:195 templates/base.html:331
+msgid "Join us"
+msgstr "Присоединиться к нам"
+
+#: templates/base.html:198 templates/base.html:334
+#: templates/registration/signup.html:4
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: templates/base.html:204 templates/base.html:340
+msgid "Orders"
+msgstr "Заказы"
+
+#: templates/base.html:207 templates/base.html:343
+msgid "Messages"
+msgstr "Сообщения"
+
+#: templates/base.html:325 templates/registration/password_change_form.html:15
+#: templates/registration/password_reset_confirm.html:15
+msgid "Change Password"
+msgstr "Изменить пароль"
+
+#: templates/base.html:431
+msgid ""
+"Get all types of cosmetics from us within 14 day delivery. We can even order "
+"the cosmetics which are not in our database. To do that kindly send a E-mail "
+"to the company's mail id."
+msgstr ""
+"Получите все виды косметики от нас в течение 14 дней доставки. Мы даже можем "
+"заказать косметику, которой нет в нашей базе данных. Для этого отправьте "
+"электронное письмо на почтовый идентификатор компании."
+
+#: templates/base.html:442
+msgid "Information"
+msgstr "Информация"
+
+#: templates/base.html:446
+msgid "Prices"
+msgstr "Цены"
+
+#: templates/base.html:447
+msgid "Terms & Conditions"
+msgstr "Условия и положения"
+
+#: templates/base.html:448 templates/base.html:461
+msgid "Order History"
+msgstr "История заказов"
+
+#: templates/base.html:449 templates/base.html:462
+msgid "Wish List"
+msgstr "Список желаемого"
+
+#: templates/base.html:450
+msgid "Specials"
+msgstr "Специальные предложения"
+
+#: templates/base.html:463
+msgid "Newsletter"
+msgstr "Новостная рассылка"
+
+#: templates/brand_products.html:176
+msgid "Price"
+msgstr "Цены"
+
+#: templates/brand_products.html:177 templates/cart.html:19
+#: templates/favorites.html:18
+msgid "View Details"
+msgstr "Просмотр деталей"
+
+#: templates/brand_products.html:184
+msgid "No products available from this brand."
+msgstr "Нет доступных товаров этого бренда."
+
+#: templates/brand_products.html:187 templates/country_products.html:223
+#: templates/home.html:619
+msgid "All products"
+msgstr "Все товары"
+
+#: templates/cart.html:5
+msgid "Your Cart"
+msgstr "Ваша корзина"
+
+#: templates/cart.html:15
+msgid "Quantity:"
+msgstr "Количество:"
+
+#: templates/cart.html:16 templates/search_results.html:101
+msgid "Price:"
+msgstr "Цена:"
+
+#: templates/cart.html:17
+msgid "Total:"
+msgstr "Итого:"
+
+#: templates/cart.html:20 templates/favorites.html:19
+msgid "Remove"
+msgstr "Удалить"
+
+#: templates/cart.html:31
+msgid "Total Price:"
+msgstr "Общая стоимость:"
+
+#: templates/cart.html:32
+msgid "Proceed to Checkout"
+msgstr "Перейти к оформлению заказа"
+
+#: templates/cart.html:42
+msgid "Oops! Your cart is currently empty."
+msgstr "Упс! Ваша корзина пока пуста."
+
+#: templates/cart.html:43
+msgid ""
+"It looks like you haven’t added any products yet. Don’t worry, it’s just a "
+"few clicks away!"
+msgstr ""
+"Похоже, вы еще не добавили товары. Не переживайте, это всего несколько "
+"кликов!"
+
+#: templates/cart.html:44 templates/favorites.html:33
+msgid "Browse Products"
+msgstr "Просмотр продуктов"
+
+#: templates/cart.html:45
+msgid "Start shopping now and fill your cart with amazing items!"
+msgstr ""
+"Начните покупки прямо сейчас и наполняйте корзину потрясающими товарами!"
+
+#: templates/checkout.html:323
+msgid "Fill checkout information"
+msgstr "Заполните информацию для оформления"
+
+#: templates/checkout.html:331
+msgid "Billing Address"
+msgstr "Платежный адрес"
+
+#: templates/checkout.html:332
+msgid "Full Name"
+msgstr "Полное имя"
+
+#: templates/checkout.html:333 templates/contactus.html:60
+msgid "Enter your full name"
+msgstr "Введите свое полное имя"
+
+#: templates/checkout.html:334
+msgid "Email"
+msgstr "Электронная почта"
+
+#: templates/checkout.html:335 templates/contactus.html:64
+msgid "Enter your email"
+msgstr "Ваша электронная почта"
+
+#: templates/checkout.html:336
+msgid "Address"
+msgstr "Адрес"
+
+#: templates/checkout.html:337
+msgid "Your full address for delivery"
+msgstr "Ваш полный адрес для доставки"
+
+#: templates/checkout.html:339
+msgid "Your phone number"
+msgstr "Номер телефона"
+
+#: templates/checkout.html:340
+msgid "Product Specifications (Optional)"
+msgstr "Xарактеристики продукта (необязательно)"
+
+#: templates/checkout.html:341
+msgid "For example: I need lipstick's pink color"
+msgstr "Например: Мне нужен розовый цвет помады."
+
+#: templates/checkout.html:345
+msgid "Payment"
+msgstr "Оплата"
+
+#: templates/checkout.html:348
+msgid "Please select payment type"
+msgstr "Пожалуйста, выберите тип оплаты"
+
+#: templates/checkout.html:350
+msgid "By Cash"
+msgstr "Наличными"
+
+#: templates/checkout.html:351
+msgid "By Card (Coming Soon)"
+msgstr "По карте (скоро)"
+
+#: templates/checkout.html:355
+msgid ""
+"Once you place your order, it cannot be undone. We can not take it back. "
+"Please be sure before proceeding. "
+msgstr ""
+"После того, как вы разместили заказ, его нельзя отменить. Мы не можем "
+"принять его обратно. Пожалуйста, убедитесь, прежде чем продолжить."
+
+#: templates/checkout.html:358
+msgid ""
+"Also, note that our website is working on a test mode, it means you can "
+"receive your order 3 to 30 working days. Sorry for the inconvinience."
+msgstr ""
+"Также обратите внимание, что наш сайт работает в тестовом режиме, это "
+"значит, что вы можете получить свой заказ от 3 до 30 рабочих дней. Извините "
+"за неудобства."
+
+#: templates/checkout.html:361
+msgid ""
+"You will pay the amount only when you get the product (by cash or card if "
+"you want). "
+msgstr ""
+"Вы заплатите сумму только при получении товара (наличными или картой по "
+"вашему желанию)"
+
+#: templates/checkout.html:366
+msgid "I agree to the terms and conditions"
+msgstr "Я согласен с условиями"
+
+#: templates/checkout.html:370
+msgid "Proceed"
+msgstr "Продолжить"
+
+#: templates/checkout.html:386
+msgid "You must agree to the terms and conditions before proceeding."
+msgstr "Прежде чем продолжить, вы должны согласиться с условиями."
+
+#: templates/checkout.html:389
+msgid "Please select a payment method."
+msgstr "Пожалуйста, выберите способ оплаты."
+
+#: templates/contactus.html:12
+msgid "We’d Love to Hear From You"
+msgstr "Мы будем рады услышать вас!"
+
+#: templates/contactus.html:13
+msgid ""
+"Feel free to reach out with any questions or feedback. We are here to help!"
+msgstr ""
+"Не стесняйтесь обращаться с любыми вопросами или отзывами. Мы здесь, чтобы "
+"помочь!"
+
+#: templates/contactus.html:27
+msgid "24/7 Support"
+msgstr "24/7 поддержка"
+
+#: templates/contactus.html:28
+msgid ""
+"Our team is always available to help you with any inquiries. We're just a "
+"message away!"
+msgstr ""
+"Наша команда всегда готова помочь вам с любыми вопросами. Мы всего лишь на "
+"расстоянии одного сообщения!"
+
+#: templates/contactus.html:34
+msgid "Fast Responses"
+msgstr "Быстрые ответы"
+
+#: templates/contactus.html:35
+msgid ""
+"We value your time and aim to respond within hours, ensuring a smooth "
+"experience."
+msgstr ""
+"Мы ценим ваше время и стремимся отвечать в течение нескольких часов, "
+"гарантируя бесперебойную работу."
+
+#: templates/contactus.html:41
+msgid "Exclusive Updates"
+msgstr "Эксклюзивные обновления"
+
+#: templates/contactus.html:42
+msgid ""
+"Stay ahead of the curve with our exclusive offers and news, directly from "
+"our team."
+msgstr ""
+"Будьте в курсе событий с нашими эксклюзивными предложениями и новостями "
+"напрямую от нашей команды."
+
+#: templates/contactus.html:52
+msgid "Thank you!"
+msgstr "Спасибо"
+
+#: templates/contactus.html:59
+msgid "Your Name"
+msgstr "Ваше имя"
+
+#: templates/contactus.html:63
+msgid "Your Email"
+msgstr "Ваша электронная почта"
+
+#: templates/contactus.html:67
+msgid "Your Phone Number"
+msgstr "Номер телефона"
+
+#: templates/contactus.html:68
+msgid "Enter your phone number"
+msgstr "Номер телефона"
+
+#: templates/contactus.html:71
+msgid "Your Message"
+msgstr "Сообщение"
+
+#: templates/contactus.html:72
+msgid "Write your message here"
+msgstr "Напишите свое сообщение здесь"
+
+#: templates/contactus.html:74
+msgid "Send Message"
+msgstr "Отправить сообщение"
+
+#: templates/contactus.html:80
+msgid "Connect With Us"
+msgstr "Свяжитесь с нами"
+
+#: templates/contactus.html:81
+msgid ""
+"Follow us on social media to stay updated on the latest news, promotions, "
+"and product launches"
+msgstr ""
+"Подпишитесь на нас в социальных сетях, чтобы быть в курсе последних "
+"новостей, акций и запусков продуктов."
+
+#: templates/contactus.html:97
+msgid "Visit Us"
+msgstr "Посетите нас"
+
+#: templates/contactus.html:98
+msgid ""
+"Feel free to stop by at our office anytime. We would love to meet you in "
+"person!"
+msgstr ""
+"Не стесняйтесь зайти к нам в офис в любое время. Мы будем рады встретиться с "
+"вами лично!"
+
+#: templates/country_products.html:222
+msgid "Back"
+msgstr "Назад"
+
+#: templates/country_products.html:229
+msgid "Products of"
+msgstr "Продукты из:"
+
+#: templates/country_products.html:252
+msgid "No products found in this category."
+msgstr "В этой категории не найдено ни одного товара."
+
+#: templates/favorites.html:5
+msgid "Your Favorites"
+msgstr "Ваши избранные товары"
+
+#: templates/favorites.html:16
+msgid "Description:"
+msgstr "Описание:"
+
+#: templates/favorites.html:31
+msgid "Oops! Your favorites list is currently empty."
+msgstr "Упс! Ваш список избранного в данный момент пуст."
+
+#: templates/favorites.html:32
+msgid ""
+"You haven’t added any products yet. But don’t worry, you can start exploring "
+"now!"
+msgstr ""
+"Похоже, вы еще не добавили товары. Не переживайте, это всего несколько "
+"кликов!"
+
+#: templates/favorites.html:34
+msgid "Find something you love and add it to your favorites!"
+msgstr "Найдите то, что вам нравится, и добавьте это в избранное!"
+
+#: templates/home.html:24
+msgid "Best collection"
+msgstr "Лучшая коллекция"
+
+#: templates/home.html:25
+msgid "of cosmetics"
+msgstr "Косметики"
+
+#: templates/home.html:26
+msgid "Order the best cosmetics from Europe from the place you want"
+msgstr "Закажите лучшую косметику из Европы там, где вам удобно"
+
+#: templates/home.html:39
+msgid "Shop Now"
+msgstr "Купить сейчас"
+
+#: templates/home.html:53
+msgid "Re-open"
+msgstr "Переоткройте"
+
+#: templates/home.html:53
+msgid "your"
+msgstr "свою"
+
+#: templates/home.html:53
+msgid "beauty"
+msgstr "красоту"
+
+#: templates/home.html:53
+msgid "with us"
+msgstr "с нами"
+
+#: templates/home.html:81 templates/home.html:540
+msgid "New Products"
+msgstr "Новые продукты"
+
+#: templates/home.html:113 templates/home.html:544 templates/home.html:645
+msgid "Please slide for more"
+msgstr "Пожалуйста, проведите пальцем влево, чтобы увидеть больше"
+
+#: templates/home.html:286
+msgid "Hot Deals"
+msgstr "Горячие предложения"
+
+#: templates/home.html:469
+msgid "Best Sellers"
+msgstr "Товары с лучшими продажами"
+
+#: templates/home.html:630
+msgid "Sale up to"
+msgstr "Скидка до"
+
+#: templates/home.html:641
+msgid "On Sale"
+msgstr "В продаже"
+
+#: templates/home.html:759 templates/product_detail.html:765
+msgid "Add to cart"
+msgstr "Добавить в корзину"
+
+#: templates/order_edit.html:10
+msgid "Order Status"
+msgstr "Время заказа"
+
+#: templates/order_edit.html:12
+msgid "Pending"
+msgstr ""
+
+#: templates/order_edit.html:13
+msgid "Shipped"
+msgstr ""
+
+#: templates/order_edit.html:14
+msgid "Delivered"
+msgstr ""
+
+#: templates/order_history.html:13
+msgid "Your Order History"
+msgstr "История заказов"
+
+#: templates/order_history.html:20
+msgid "Order ID"
+msgstr "Заказы"
+
+#: templates/order_history.html:21
+msgid "Products"
+msgstr "Новые продукты"
+
+#: templates/order_history.html:22
+msgid "Total Price"
+msgstr "Общая стоимость"
+
+#: templates/order_history.html:23
+msgid "Order Date"
+msgstr "Время заказа"
+
+#: templates/order_history.html:24
+msgid "Status"
+msgstr "Статус"
+
+#: templates/order_history.html:46
+msgid "You have no orders yet."
+msgstr "У вас пока нет заказов."
+
+#: templates/order_history.html:53
+msgid ""
+"Please, note that if the order status is Pending, it means we received your "
+"order but its not delivered to Uzbekistan yet. If the order status is "
+"Shipped, it means it has delivered to Uzbekistan. If the status is "
+"Delivered, it means you received the product(s). If there is an issue, "
+"please don't hesitate to send us a message by clicking Send a message button"
+msgstr ""
+"Обратите внимание, что если статус заказа 'Pending', это означает, что мы "
+"получили ваш заказ, но он еще не доставлен в Узбекистан. Если статус заказа "
+"'Shipped', это означает, что он доставлен в Узбекистан. Если статус "
+"'Delivered', это означает, что вы получили товар(ы). Если возникла проблема, "
+"не стесняйтесь отправить нам сообщение, нажав кнопку Отправить сообщение"
+
+#: templates/order_history.html:56
+msgid "Send a message"
+msgstr "Отправить сообщение"
+
+#: templates/product_detail.html:767
+msgid "Add to favorites"
+msgstr "Добавить в избранное"
+
+#: templates/product_detail.html:775
+msgid "Success!"
+msgstr "Успешно!"
+
+#: templates/product_detail.html:784
+msgid "Customer Reviews"
+msgstr "Отзывы клиентов"
+
+#: templates/product_detail.html:798
+msgid "Average Rating"
+msgstr "Средний рейтинг"
+
+#: templates/product_detail.html:829
+msgid "Posted on"
+msgstr "Опубликовано"
+
+#: templates/product_detail.html:833
+msgid "No reviews yet. Be the first to leave one!"
+msgstr "Пока нет комментариев. Будьте первым, кто оставит комментарий!"
+
+#: templates/product_detail.html:840
+msgid "Leave a Review"
+msgstr "Оставить комментарий"
+
+#: templates/product_detail.html:844
+msgid "Your Rating"
+msgstr "Ваш рейтинг"
+
+#: templates/product_detail.html:854
+msgid "Your Review"
+msgstr "Ваш комментарий"
+
+#: templates/product_detail.html:860
+msgid "Write your review here..."
+msgstr "Оставьте свой отзыв здесь..."
+
+#: templates/product_detail.html:864
+msgid "Submit Review"
+msgstr "Отправить"
+
+#: templates/product_detail.html:870
+msgid "You may also like"
+msgstr "Вам также может понравиться"
+
+#: templates/product_detail.html:880 templates/search_results.html:104
+msgid "Details"
+msgstr "Подробнее"
+
+#: templates/registration/login.html:12
+msgid "Welcome Back!"
+msgstr "Добро пожаловать!"
+
+#: templates/registration/login.html:21
+msgid "Please login to your account to continue."
+msgstr "Пожалуйста, войдите в свою аккаунт, чтобы продолжить"
+
+#: templates/registration/login.html:32
+msgid "Forgot Password?"
+msgstr "Забыли пароль?"
+
+#: templates/registration/password_change_done.html:8
+msgid "Password Successfully Changed"
+msgstr "Пароль успешно сброшен"
+
+#: templates/registration/password_change_done.html:9
+msgid "You can now log in using your new password."
+msgstr "Теперь вы можете войти с новым паролем."
+
+#: templates/registration/password_change_done.html:12
+#: templates/registration/password_reset_done.html:14
+msgid "Go to Login Page"
+msgstr "Перейти на логин"
+
+#: templates/registration/password_change_form.html:9
+msgid "Change Your Password"
+msgstr "Изменить пароль"
+
+#: templates/registration/password_change_form.html:10
+msgid "Please enter your old password and your new password twice to confirm."
+msgstr ""
+"Пожалуйста, введите ваш старый пароль и новый пароль дважды для "
+"подтверждения."
+
+#: templates/registration/password_reset_complete.html:7
+msgid "Password Changed"
+msgstr "Пароль изменен"
+
+#: templates/registration/password_reset_complete.html:9
+msgid ""
+"Your password has been successfully updated. You can now log in using your "
+"new password."
+msgstr "Теперь вы можете войти с новым паролем."
+
+#: templates/registration/password_reset_complete.html:11
+msgid "Go to Log In Page"
+msgstr "Перейти на логин"
+
+#: templates/registration/password_reset_confirm.html:10
+msgid "Enter New Password"
+msgstr "Введите новый пароль"
+
+#: templates/registration/password_reset_confirm.html:11
+msgid "Please enter your new password below to update your credentials."
+msgstr "Введите новый пароль ниже."
+
+#: templates/registration/password_reset_done.html:9
+msgid "Please Check Your Email"
+msgstr "Ваша электронная почта"
+
+#: templates/registration/password_reset_done.html:11
+msgid "Information about your password change has been sent to your email!"
+msgstr ""
+
+#: templates/registration/password_reset_done.html:12
+msgid "Make sure to check your inbox (and spam folder if needed)."
+msgstr ""
+"Обязательно проверьте свой почтовый ящик (и папку со спамом, если "
+"необходимо)."
+
+#: templates/registration/password_reset_form.html:9
+msgid "Forgot Your Password?"
+msgstr "Забыли пароль?"
+
+#: templates/registration/password_reset_form.html:11
+msgid ""
+"Enter your email below to reset your password. We’ll send you a link to "
+"create a new one."
+msgstr ""
+"Введите свой адрес электронной почты ниже, чтобы сбросить пароль. Мы вышлем "
+"вам ссылку для создания нового пароля."
+
+#: templates/registration/signup.html:11
+msgid "Create an Account"
+msgstr "Создайте новый аккаунт"
+
+#: templates/registration/signup.html:12
+msgid "Fill in the details below to sign up and get started."
+msgstr "Заполните данные ниже, чтобы зарегистрироваться и начать работу."
+
+#: templates/registration/signup.html:17
+msgid "Sign Up"
+msgstr "Зарегистрироваться"
+
+#: templates/registration/signup.html:20
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: templates/search_results.html:4 templates/search_results.html:81
+msgid "Search Results for"
+msgstr "Результаты поиска"
+
+#: templates/search_results.html:105
+msgid "Add to Cart"
+msgstr "Добавить в корзину"
+
+#: templates/search_results.html:113
+msgid "No products found. Try searching for something else."
+msgstr "Не найдено ни одного продукта. Попробуйте поискать что-то другое."
+
+#, fuzzy
+#~| msgid "Categories"
+#~ msgid "Category"
+#~ msgstr "Категории"
+
+#~ msgid "Category Name"
+#~ msgstr "Категории"
+
+#~ msgid "Apply Filter"
+#~ msgstr "Применить фильтр"
+
+#~ msgid "Clear Filter"
+#~ msgstr "Очистить фильтр"
+
+#~ msgid ""
+#~ "This perfume is a wonderful elixir that heightens both the scents of "
+#~ "gourmet Bourbon vanilla and those refined of tuberose and jasmine. The "
+#~ "delightful alliance reminds of tropical paradise."
+#~ msgstr ""
+#~ "Этот парфюм — прекрасный эликсир, который усиливает как ароматы "
+#~ "изысканной бурбонской ванили, так и изысканные ароматы туберозы и "
+#~ "жасмина. Восхитительный союз напоминает о тропическом рае"
+
+#~ msgid "Accepted Cards"
+#~ msgstr "Принятые карты"
+
+#~ msgid "Name on Card"
+#~ msgstr "Имя на карте"
+
+#, fuzzy
+#~| msgid "Credit Card Number"
+#~ msgid "Credit card number"
+#~ msgstr "Номер кредитной карты"
+
+#~ msgid "Continue to checkout"
+#~ msgstr "Перейти к оформлению заказа"
+
+#, fuzzy
+#~| msgid "Your Cart"
+#~ msgid "Cart"
+#~ msgstr "Ваша корзина"
+
+#~ msgid "Total"
+#~ msgstr "Итого"
+
+#~ msgid "Cosmetics"
+#~ msgstr "Косметика"
+
+#~ msgid "State"
+#~ msgstr "Штат"
+
+#~ msgid "Zip"
+#~ msgstr "Почтовый индекс"
+
+#, fuzzy
+#~| msgid "Add to Cart"
+#~ msgid "Add to saved"
+#~ msgstr "Добавить в корзину"
+
+#~ msgid "City"
+#~ msgstr "Город"
+
+#~ msgid "Prices Drop"
+#~ msgstr "Снижение цен"
+
+#~ msgid "Best Sales"
+#~ msgstr "Лучшие продажи"
+
+#~ msgid "Expiration Date"
+#~ msgstr "Срок годности"
+
+#~ msgid "CVV"
+#~ msgstr "CVV"
+
+#~ msgid "Payment Method"
+#~ msgstr "Способ оплаты"
+
+#~ msgid "Place Order"
+#~ msgstr "Разместить заказ"
+
+#~ msgid "Your Order"
+#~ msgstr "Ваш заказ"
+
+#~ msgid "Order Summary"
+#~ msgstr "Резюме заказа"
+
+#~ msgid "Item"
+#~ msgstr "Товар"
+
+#~ msgid "Subtotal"
+#~ msgstr "Промежуточный итог"
+
+#~ msgid "Discount"
+#~ msgstr "Скидка"
+
+#~ msgid "Have a question, comment, or suggestion? Reach out to us!"
+#~ msgstr "Есть вопрос, комментарий или предложение? Свяжитесь с нами!"
+
+#~ msgid "Subject"
+#~ msgstr "Тема"
+
+#~ msgid "Remove from Favorites"
+#~ msgstr "Удалить из избранного"
+
+#~ msgid "Welcome to our store!"
+#~ msgstr "Добро пожаловать в наш магазин!"
+
+#~ msgid "Explore Our Products"
+#~ msgstr "Исследуйте наши продукты"
+
+#~ msgid "Featured Products"
+#~ msgstr "Рекомендуемые товары"
+
+#~ msgid "Login to Your Account"
+#~ msgstr "Войдите в свой аккаунт"
+
+#~ msgid "Email Address"
+#~ msgstr "Адрес электронной почты"
+
+#~ msgid "Log In"
+#~ msgstr "Войти"
+
+#~ msgid "Don't have an account?"
+#~ msgstr "У вас нет аккаунта?"
+
+#~ msgid "Sign up now"
+#~ msgstr "Зарегистрируйтесь сейчас"
+
+#~ msgid "Reset your password"
+#~ msgstr "Сбросить ваш пароль"
+
+#~ msgid "New Password"
+#~ msgstr "Новый пароль"
+
+#~ msgid "Confirm Password"
+#~ msgstr "Подтвердите пароль"
+
+#~ msgid "Username"
+#~ msgstr "Username"
+
+#~ msgid "Log in now"
+#~ msgstr "Войдите сейчас"
+
+#~ msgid "No results found."
+#~ msgstr "Результаты не найдены."
+
+#~ msgid "Try a different search term."
+#~ msgstr "Попробуйте другой запрос."
+
+#~ msgid "Shop by Category"
+#~ msgstr "Покупки по категориям"
+
+#~ msgid "Price Range"
+#~ msgstr "Ценовой диапазон"
+
+#~ msgid "Sort By"
+#~ msgstr "Сортировать по"
+
+#~ msgid "Popularity"
+#~ msgstr "Популярность"
+
+#~ msgid "Price: Low to High"
+#~ msgstr "Цена: от низкой к высокой"
+
+#~ msgid "Price: High to Low"
+#~ msgstr "Цена: от высокой к низкой"
+
+#~ msgid "View Product"
+#~ msgstr "Посмотреть товар"
+
+#~ msgid "Out of Stock"
+#~ msgstr "Нет в наличии"
+
+#~ msgid "In Stock"
+#~ msgstr "В наличии"
+
+#~ msgid "Thank You for Your Purchase!"
+#~ msgstr "Спасибо за вашу покупку!"
+
+#~ msgid "We hope you enjoy your items!"
+#~ msgstr "Надеемся, вам понравятся ваши товары!"
+
+#~ msgid "Track Your Order"
+#~ msgstr "Отслеживать заказ"
+
+#~ msgid "If you have any questions, feel free to contact us."
+#~ msgstr "Если у вас есть вопросы, не стесняйтесь связаться с нами."
+
+#~ msgid "Your Wishlist"
+#~ msgstr "Ваш список желаемого"
+
+#~ msgid "You haven't added any items to your wishlist."
+#~ msgstr "Вы не добавили товары в свой список желаемого."
+
+#~ msgid "Add items to your wishlist and save them for later."
+#~ msgstr "Добавьте товары в свой список желаемого и сохраните их на потом."
+
+#~ msgid "Remove from Wishlist"
+#~ msgstr "Удалить из списка желаемого"
+
+#~ msgid "Move to Cart"
+#~ msgstr "Переместить в корзину"

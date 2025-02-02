@@ -1,0 +1,1194 @@
+{% load static %}
+{% block extrahead %}
+    <script>window.CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/';</script>
+    {{ block.super }}
+{% endblock %}
+{% load i18n %}
+<style>
+  @media screen and (max-width: 767px) {
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UzBeautyShop</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/static/images/logo.png" type="image/png">
+</head>
+<body>
+    <div class="off_canvars_overlay"></div>
+    <div class="header_right_info_xs">
+      <ul>
+        <li class="search_box">
+          <a href="javascript:void(0)">
+              <i class="fa fa-search" style="color: #000;"></i>
+          </a>
+          <div class="search_widget">
+              <form action="{% url 'search' %}" method="GET">
+                  <input type="text" name="q" placeholder="Search your perfume" required>
+                  <button type="submit"><i class="fa fa-search" style="color: #000;"></i></button>
+              </form>
+          </div>
+      </li>
+      
+          <li class="header_wishlist">
+            <a href="{% url 'favorites' %}">
+                <i class="fa fa-heart-o" style="color: #000;"></i>
+                <span class="item_count">{{ favorite_count }}</span>
+            </a>
+        </li>
+        <li class="mini_cart_wrapper">
+            <a href="{% url 'cart_view' %}">
+                <i class="fa fa-shopping-cart" style="color: #000;"></i>
+                <span class="item_count">{{ cart_count }}</span>
+            </a>
+        </li>  
+      </ul>
+  </div>
+    <div class="offcanvas_menu offcanvas_two">
+        <div class="canvas_open">
+          <div class="header_right_info">
+            <ul>
+              <li class="search_box">
+                <a href="javascript:void(0)">
+                    <i class="fa fa-search"></i>
+                </a>
+                <div class="search_widget">
+                    <form action="{% url 'search' %}" method="GET">
+                        <input type="text" name="q" placeholder="Search your perfume" required>
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </li>
+            
+                <li class="header_wishlist">
+                  <a href="{% url 'favorites' %}">
+                      <i class="fa fa-heart-o"></i>
+                      <span class="item_count">{{ favorite_count }}</span>
+                  </a>
+              </li>
+              <li class="mini_cart_wrapper">
+                  <a href="{% url 'cart_view' %}">
+                      <i class="fa fa-shopping-cart"></i>
+                      <span class="item_count">{{ cart_count }}</span>
+                  </a>
+              </li>  
+            </ul>
+        </div>
+            <a href="javascript:void(0)"><i class="fa fa-bars"></i></a>
+          </div>
+        <div class="offcanvas_menu_wrapper">
+            <div class="canvas_close">
+                <a href="javascript:void(0)"><i class="fa fa-times"></i></a>
+            </div>
+
+            <div class="header_right_info">
+                <ul>
+                  <li class="search_box">
+                    <a href="javascript:void(0)">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <div class="search_widget">
+                        <form action="{% url 'search' %}" method="GET">
+                            <input type="text" name="q" placeholder="Search your perfume" required>
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </li>
+                
+                    <li class="header_wishlist">
+                      <a href="{% url 'favorites' %}">
+                          <i class="fa fa-heart-o"></i>
+                          <span class="item_count">{{ favorite_count }}</span>
+                      </a>
+                  </li>
+                  <li class="mini_cart_wrapper">
+                      <a href="{% url 'cart_view' %}">
+                          <i class="fa fa-shopping-cart"></i>
+                          <span class="item_count">{{ cart_count }}</span>
+                      </a>
+                  </li>  
+                </ul>
+            </div>
+
+            <div id="menu" class="text-left">
+                <ul class="offcanvas_main_menu">
+                  <li class="menu-item-has-children">
+                    <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                </li>
+                    <li class="menu-item-has-children">
+                        <a href="#">{% trans "Brands"%}</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item-has-children">
+                                <a href="#">{% trans "Germany"%}</a>
+                                <ul class="sub-menu">
+                                  <li><a href="{% url 'country_products' "Germany" %}">{% trans "All German products" %}</a></li>
+                                  <li><a href="{% url 'brand_detail' 1 %}">Nivea</a></li>
+                                  <li><a href="{% url 'brand_detail' 2 %}">Dr.Hauschka</a></li>
+                                  <li><a href="{% url 'brand_detail' 3 %}">Schwarzkopf</a></li>
+                                  <li><a href="{% url 'brand_detail' 4 %}">Babor</a></li>
+                                  <li><a href="{% url 'brand_detail' 5 %}">Weleda</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">{% trans "France" %}</a>
+                                <ul class="sub-menu">
+                                  <li><a href="{% url 'country_products' "France" %}">{% trans "All French products" %}</a></li>
+                                  <li><a href="{% url 'brand_detail' 6 %}">L'Oreal Paris</a></li>
+                                  <li><a href="{% url 'brand_detail' 7 %}">Lancome</a></li>
+                                  <li><a href="{% url 'brand_detail' 8 %}">Chanel</a></li>
+                                  <li><a href="{% url 'brand_detail' 9 %}">Dior Beauty</a></li>
+                                  <li><a href="{% url 'brand_detail' 10 %}">Clarins</a></li>
+                                  </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="#">{% trans "Italy" %}</a>
+                                <ul class="sub-menu">
+                                  <li><a href="{% url 'country_products' "Italy" %}">{% trans "All Italian products" %}</a></li>
+                                  <li><a href="{% url 'brand_detail' 11 %}">Gucci Beauty</a></li>
+                                  <li><a href="{% url 'brand_detail' 12 %}">Dolce & Gabbana Beauty</a></li>
+                                  <li><a href="{% url 'brand_detail' 13 %}">Kiko Milano</a></li>
+                                  <li><a href="{% url 'brand_detail' 14 %}">Acqua di Parma</a></li>
+                                  <li><a href="{% url 'brand_detail' 15 %}">Collistar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                      <a href="{% url 'article_list' %}">{% trans "Blog" %}</a>
+                  </li>
+                    <li class="menu-item-has-children">
+                        <a href="{% url 'about' %}">{% trans "About Us" %}</a>
+                    </li>
+                    <li><a href="{% url 'contact' %}">{% trans "Contact Us"%}</a></li>
+                    <li class="menu-item-has-children">
+                      {% if user.is_authenticated %}
+                        <a href="#">{% trans "Your profile" %}</a>
+                        <ul class="sub-menu">
+                          <li><p style="color: #1E90FF; font-size: 14px;">{% trans "Welcome: " %} {{ user.username}}</p></li><hr>
+                          <li><a href="{% url 'order_history'%}">{% trans "Order history"%}</a></li>
+                            <li><a href="{% url 'password_change'%}">{% trans "Change password" %}</a></li>
+                            <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li class="menu-item-has-children">
+                      <a href="#">{% trans "Join us"%}</a>
+                      <ul class="sub-menu">
+                          <li><a href="{% url 'login'%}">{% trans "Login"%}</a></li>
+                          <li><a href="{% url 'signup' %}">{% trans "Sign up" %}</a></li>
+                      </ul>
+                      {% endif %}
+                  </li>
+                  {% if user.is_staff %}
+                  <li class="menu-item-has-children">
+                    <a href="{% url 'admin_orders' %}">{% trans "Orders"%}</a>
+                </li>
+                <li class="menu-item-has-children">
+                  <a href="{% url 'admin_messages' %}">{% trans "Messages"%}</a>
+              </li>
+                {% endif %}
+                <li class="menu-item-has-children">
+                  {% get_current_language as LANGUAGE_CODE %}
+                  {% if LANGUAGE_CODE == 'en' %}
+                    <a href="#">Language</a>
+                  {% elif LANGUAGE_CODE == 'ru' %}
+                    <a href="#">Язык</a>
+                  {% elif LANGUAGE_CODE == 'uz' %}
+                    <a href="#">Til</a>
+                  {% endif %}
+                  <ul class="sub-menu">
+                    <form method="post" action="{% url 'set_language' %}">
+                      {% csrf_token %}
+                      <li><a><button type="submit" name="language" value="en" style="width: 100%; border: 0; border-radius: 0; background-color: #FFF; ">English</button></a>
+                        <li><a> <button type="submit" name="language" value="ru" style="width: 100%; border: 0; border-radius: 0; background-color: #FFF; color: #000;">Русский</button></a>
+                          <li><a> <button type="submit" name="language" value="uz" style="width: 100%; border: 0; border-radius: 0; background-color: #FFF; color: #000;">O'zbek</button></a>
+                  </form>
+                  </ul>
+                </li>
+                
+                </ul>
+            </div>
+
+            <div class="offcanvas_footer">
+                <span><a href="#"><i class="fa fa-envelope-0"></i>UzBeautyShop</a></span>
+                <ul>
+                  <li class="facebook">
+                      <a href="https://www.facebook.com/uzbeautyshop">
+                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/1200px-2021_Facebook_icon.svg.png" alt="Facebook" style="width: 30px; height: 30px;">
+                      </a>
+                  </li>
+                  <li class="instagram">
+                      <a href="https://www.instagram.com/uzbeautyshop">
+                          <img src="https://i.pinimg.com/originals/1e/d6/e0/1ed6e0a9e69176a5fdb7e090a1046b86.jpg" alt="Instagram" style="width: 30px; height: 30px;">
+                      </a>
+                  </li>
+                  <li class="telegram">
+                      <a href="https://t.me/uzbeautyshop">
+                          <img src="https://banner2.cleanpng.com/20240130/exl/transparent-social-media-logo-twitter-logo-blue-bird-on-white-1710892229266.webp" alt="Telegram" style="width: 30px; height: 30px;">
+                      </a>
+                  </li>
+              </ul>
+              
+            </div>
+        </div>
+
+    </div>
+
+    <header>
+        <div class="main_header header_transparent header-mobile-m">
+            <div class="header_container sticky-header" style="padding: 0;">
+                <div class="container-fluid">
+                    <div class="row align-items-center" style="background-color: rgb(248, 237, 223);">
+                        <div class="col-lg-2">
+                            <div class="logo">
+                                <a href="{% url 'home' %}"><img src="/static/images/logo.png" alt="" width="100px" height="100px"></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!-- main-menu starts -->
+                            <div class="main_menu menu_two menu_position">
+                                <nav>
+                                    <ul>
+                                      <li class="menu-item-has-children">
+                                        <a href="{% url 'home' %}" style="color: rgb(85, 50, 25);">{% trans "Home" %}</a>
+                                    </li>
+                                        <li class="mega_items">
+                                            <a href="#" style="color: rgb(85, 50, 25)">{% trans "Brands" %} <i class="fa fa-angle-down"></i></a>
+                                            <div class="mega_menu">
+                                                <ul class="mega_menu_inner">
+                                                    <li>
+                                                        <a href="{% url 'country_products' "Germany" %}">{% trans "Germany"%}</a>
+                                                        <ul>
+                                                            <li><a href="{% url 'brand_detail' 1 %}">Nivea</a></li>
+                                                            <li><a href="{% url 'brand_detail' 2 %}">Dr.Hauschka</a></li>
+                                                            <li><a href="{% url 'brand_detail' 3 %}">Schwarzkopf</a></li>
+                                                            <li><a href="{% url 'brand_detail' 4 %}">Babor</a></li>
+                                                            <li><a href="{% url 'brand_detail' 5 %}">Weleda</a></li>
+                                                        </ul>
+
+                                                    </li>
+                                                    <li>
+                                                        <a href="{% url 'country_products' "France" %}">{% trans "France"%}</a>
+                                                        <ul>
+                                                            <li><a href="{% url 'brand_detail' 6 %}">L'Oreal Paris</a></li>
+                                                            <li><a href="{% url 'brand_detail' 7 %}">Lancome</a></li>
+                                                            <li><a href="{% url 'brand_detail' 8 %}">Chanel</a></li>
+                                                            <li><a href="{% url 'brand_detail' 9 %}">Dior Beauty</a></li>
+                                                            <li><a href="{% url 'brand_detail' 10 %}">Clarins</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="menu-item-has-children">
+                                                        <a href="{% url 'country_products' "Italy" %}">{% trans "Italy"%}</a>
+                                                        <ul class="sub-menu">
+                                                            <li><a href="{% url 'brand_detail' 11 %}">Gucci Beauty</a></li>
+                                                            <li><a href="{% url 'brand_detail' 12 %}">Dolce & Gabbana Beauty</a></li>
+                                                            <li><a href="{% url 'brand_detail' 13 %}">Kiko Milano</a></li>
+                                                            <li><a href="{% url 'brand_detail' 14 %}">Acqua di Parma</a></li>
+                                                            <li><a href="{% url 'brand_detail' 15 %}">Collistar</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="menu-item-has-children">
+                                          <a href="{% url 'article_list' %}" style="color: rgb(85, 50, 25)">{% trans "Blog" %}</a>
+                                      </li>
+                                        <li><a href="{% url 'about' %}" style="color: rgb(85, 50, 25)">{% trans "About Us"%}</a></li>
+                                        <li><a href="{% url 'contact' %}" style="color: rgb(85, 50, 25)">{% trans "Contact Us"%}</a></li>
+                                        {% if user.is_authenticated %}
+                                        <li>
+                                            <a href="#" style="color: rgb(85, 50, 25)">{% trans "Your profile" %}<i class="fa fa-angle-down"></i></a>
+                                            <ul class="sub_menu pages">
+                                              <li><p style="color: #1E90FF; font-size: 14px;">{% trans "Welcome: " %}: {{ user.username}}</p></li><hr>
+                                              <li><a href="{% url 'order_history'%}">{% trans "Order history"%}</a></li>
+                                                <li><a href="{% url 'password_change'%}">{% trans "Change Password"%}</a></li>
+                                                <li><a href="{% url 'logout'%}">{% trans "Logout" %}</a></li>
+                                            </ul>
+                                        </li>
+                                        {% else %}
+                                        <li>
+                                          <a href="#" style="color: rgb(85, 50, 25)">{% trans "Join us"%}<i class="fa fa-angle-down"></i></a>
+                                          <ul class="sub_menu pages">
+                                              <li><a href="{% url 'login'%}">{% trans "Login"%}</a></li>
+                                              <li><a href="{% url 'signup'%}">{% trans "Sign up"%}</a></li>
+                                          </ul>
+                                      </li>
+                                      {% endif %}
+                                      {% if user.is_staff %}
+                                      <li class="menu-item-has-children">
+                                        <a href="{% url 'admin_orders' %}" style="color: rgb(85, 50, 25)">{% trans "Orders"%}</a>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                      <a href="{% url 'admin_messages' %}" style="color: rgb(85, 50, 25)">{% trans "Messages"%}</a>
+                                  </li>
+                                    {% endif %}
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <!-- main menu ends -->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="header_top_right">
+                                <div class="header_right_info">
+                                    <ul>
+                                      <li class="search_box">
+                                        <a href="javascript:void(0)">
+                                            <i class="fa fa-search" style="color: #000;"></i>
+                                        </a>
+                                        <div class="search_widget">
+                                            <form action="{% url 'search' %}" method="GET">
+                                                <input type="text" name="q" placeholder="Search your perfume" required>
+                                                <button type="submit"><i class="fa fa-search"></i></button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    
+                                        <li class="header_wishlist">
+                                          <a href="{% url 'favorites' %}">
+                                              <i class="fa fa-heart-o" style="color: #000;"></i>
+                                              <span class="item_count">{{ favorite_count }}</span>
+                                          </a>
+                                      </li>
+                                      <li class="mini_cart_wrapper">
+                                          <a href="{% url 'cart_view' %}">
+                                              <i class="fa fa-shopping-cart" style="color: #000;"></i>
+                                              <span class="item_count">{{ cart_count }}</span>
+                                          </a>
+                                      </li>                                      
+                                    </ul>
+                                </div>
+                                <div class="header_account">
+                                    <ul>
+                                        <li class="language" >
+                                          <a href="#" style="color: rgb(85, 50, 25);">
+
+                                              {% get_current_language as LANGUAGE_CODE %}
+                                              {% if LANGUAGE_CODE == 'en' %}
+                                                  EN <i class="fa fa-angle-down" style="color: rgb(85, 50, 25);"></i>
+                                              {% elif LANGUAGE_CODE == 'ru' %}
+                                                  RU <i class="fa fa-angle-down"></i>
+                                              {% elif LANGUAGE_CODE == 'uz' %}
+                                                  UZ <i class="fa fa-angle-down"></i>
+                                              {% endif %}
+                                          </a>
+
+                                          <form method="post" action="{% url 'set_language' %}">
+                                            <ul class="dropdown_language">
+                                            {% csrf_token %}
+                                            <li><a><button type="submit" name="language" value="en" style="width: 100%; border: 0; border-radius: 0; background-color: #FFF; color: #000;">English</button></a>
+                                              <li><a> <button type="submit" name="language" value="ru" style="width: 100%; border: 0; border-radius: 0; background-color: #FFF; color: #000;">Russian</button></a>
+                                                <li><a> <button type="submit" name="language" value="uz" style="width: 100%; border: 0; border-radius: 0; background-color: #FFF; color: #000;">O'zbek</button></a>
+                                        </form>
+                                      </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div>
+      {% block content %}
+      {% endblock content %}
+      </div>
+
+{% block footer %}
+<footer class="footer_widgets color_two" style="background-color: rgb(248, 237, 223);">
+  <div class="footer_top">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-4 col-md-6 col-sm-7">
+                  <div class="widgets_container contact_us">
+                      <div class="footer_logo">
+                          <a href="{% url 'home' %}"><img src="/static/images/logo.png" alt="Logo"></a>
+                      </div>
+                      <div class="footer_desc">
+                          <p style="color: rgb(85, 50, 25);">{% trans "Get all types of cosmetics from us within 14 day delivery. We can even order the cosmetics which are not in our database. To do that kindly send a E-mail to the company's mail id." %}</p>
+                      </div>
+                      <p style="color: rgb(85, 50, 25);">
+                          <span style="color: rgb(85, 50, 25);">Address :</span> Ratiborstrasse 2, 10999, Berlin
+                      </p>
+                      <p style="color: rgb(85, 50, 25);"><span>Email :</span> <a href="{% url 'contact' %}">uzbeautyshop@gmail.com</a></p>
+                      <p style="color: rgb(85, 50, 25);"><span>Phone :</span> <a href="tel: +49 1604651149">+49 1604651149</a> </p>
+                  </div>
+              </div>
+              <div class="col-lg-2 col-md-6 col-sm-5">
+                  <div class="widgets_container widget_menu">
+                      <h3 style="color: rgb(85, 50, 25);">{% trans "Information"%}</h3>
+                      <div class="footer_menu">
+                          <ul>
+                              <li><a href="{% url 'about' %}" style="color: rgb(85, 50, 25);">{% trans "About Us"%}</a></li>
+                              <li><a href="{% url 'all' %}" style="color: rgb(85, 50, 25);">{% trans "Prices"%}</a></li>
+                              <li><a href="{% url 'about' %}" style="color: rgb(85, 50, 25);">{% trans "Terms & Conditions"%}</a></li>
+                              <li><a href="{% url 'order_history' %}" style="color: rgb(85, 50, 25);">{% trans "Order History"%}</a></li>
+                              <li><a href="{% url 'favorites' %}" style="color: rgb(85, 50, 25);">{% trans "Wish List"%}</a></li>
+                              <li><a href="{% url 'all' %}" style="color: rgb(85, 50, 25);">{% trans "Specials"%}</a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+ 
+  <div class="footer_link">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <ul>
+                      <li><a href="{% url 'order_history' %}" style="color: rgb(85, 50, 25);">{% trans "Order History"%}</a></li>
+                      <li><a href="{% url 'favorites' %}" style="color: rgb(85, 50, 25);">{% trans "Wish List"%}</a></li>
+                      <li><a href="{% url 'article_list' %}" style="color: rgb(85, 50, 25);">{% trans "Newsletter"%}</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- footer section starts  -->
+
+</footer>
+      <!-- footer section starts  -->
+{% endblock footer %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    <script>
+        (function (factory) {
+          "use strict";
+        
+          if (typeof define === "function" && define.amd) {
+            define(["jquery"], factory);
+          } else {
+            factory(jQuery);
+          }
+        })(function ($) {
+          "use strict";
+        
+          var instances = [],
+            matchers = [],
+            defaultOptions = {
+              precision: 100, // 0.1 seconds, used to update the DOM
+              elapse: false,
+              defer: false,
+            };
+          // Miliseconds
+          matchers.push(/^[0-9]*$/.source);
+          // Month/Day/Year [hours:minutes:seconds]
+          matchers.push(/([0-9]{1,2}\/){2}[0-9]{4}( [0-9]{1,2}(:[0-9]{2}){2})?/.source);
+          // Year/Day/Month [hours:minutes:seconds] and
+          // Year-Day-Month [hours:minutes:seconds]
+          matchers.push(
+            /[0-9]{4}([\/\-][0-9]{1,2}){2}( [0-9]{1,2}(:[0-9]{2}){2})?/.source
+          );
+          // Cast the matchers to a regular expression object
+          matchers = new RegExp(matchers.join("|"));
+          // Parse a Date formatted has String to a native object
+          function parseDateString(dateString) {
+            // Pass through when a native object is sent
+            if (dateString instanceof Date) {
+              return dateString;
+            }
+            // Caste string to date object
+            if (String(dateString).match(matchers)) {
+              // If looks like a milisecond value cast to number before
+              // final casting (Thanks to @msigley)
+              if (String(dateString).match(/^[0-9]*$/)) {
+                dateString = Number(dateString);
+              }
+              // Replace dashes to slashes
+              if (String(dateString).match(/\-/)) {
+                dateString = String(dateString).replace(/\-/g, "/");
+              }
+              return new Date(dateString);
+            } else {
+              throw new Error("Couldn't cast `" + dateString + "` to a date object.");
+            }
+          }
+          // Map to convert from a directive to offset object property
+          var DIRECTIVE_KEY_MAP = {
+            Y: "years",
+            m: "months",
+            n: "daysToMonth",
+            d: "daysToWeek",
+            w: "weeks",
+            W: "weeksToMonth",
+            H: "hours",
+            M: "minutes",
+            S: "seconds",
+            D: "totalDays",
+            I: "totalHours",
+            N: "totalMinutes",
+            T: "totalSeconds",
+          };
+          // Returns an escaped regexp from the string
+          function escapedRegExp(str) {
+            var sanitize = str.toString().replace(/([.?*+^$[\]\\(){}|-])/g, "\\$1");
+            return new RegExp(sanitize);
+          }
+          // Time string formatter
+          function strftime(offsetObject) {
+            return function (format) {
+              var directives = format.match(/%(-|!)?[A-Z]{1}(:[^;]+;)?/gi);
+              if (directives) {
+                for (var i = 0, len = directives.length; i < len; ++i) {
+                  var directive = directives[i].match(/%(-|!)?([a-zA-Z]{1})(:[^;]+;)?/),
+                    regexp = escapedRegExp(directive[0]),
+                    modifier = directive[1] || "",
+                    plural = directive[3] || "",
+                    value = null;
+                  // Get the key
+                  directive = directive[2];
+                  // Swap shot-versions directives
+                  if (DIRECTIVE_KEY_MAP.hasOwnProperty(directive)) {
+                    value = DIRECTIVE_KEY_MAP[directive];
+                    value = Number(offsetObject[value]);
+                  }
+                  if (value !== null) {
+                    // Pluralize
+                    if (modifier === "!") {
+                      value = pluralize(plural, value);
+                    }
+                    // Add zero-padding
+                    if (modifier === "") {
+                      if (value < 10) {
+                        value = "0" + value.toString();
+                      }
+                    }
+                    // Replace the directive
+                    format = format.replace(regexp, value.toString());
+                  }
+                }
+              }
+              format = format.replace(/%%/, "%");
+              return format;
+            };
+          }
+          // Pluralize
+          function pluralize(format, count) {
+            var plural = "s",
+              singular = "";
+            if (format) {
+              format = format.replace(/(:|;|\s)/gi, "").split(/\,/);
+              if (format.length === 1) {
+                plural = format[0];
+              } else {
+                singular = format[0];
+                plural = format[1];
+              }
+            }
+            // Fix #187
+            if (Math.abs(count) > 1) {
+              return plural;
+            } else {
+              return singular;
+            }
+          }
+          // The Final Countdown
+          var Countdown = function (el, finalDate, options) {
+            this.el = el;
+            this.$el = $(el);
+            this.interval = null;
+            this.offset = {};
+            this.options = $.extend({}, defaultOptions);
+            // console.log(this.options);
+            // This helper variable is necessary to mimick the previous check for an
+            // event listener on this.$el. Because of the event loop there might not
+            // be a registered event listener during the first tick. In order to work
+            // as expected a second tick is necessary, so that the events can be fired
+            // and handled properly.
+            this.firstTick = true;
+            // Register this instance
+            this.instanceNumber = instances.length;
+            instances.push(this);
+            // Save the reference
+            this.$el.data("countdown-instance", this.instanceNumber);
+            // Handle options or callback
+            if (options) {
+              // Register the callbacks when supplied
+              if (typeof options === "function") {
+                this.$el.on("update.countdown", options);
+                this.$el.on("stoped.countdown", options);
+                this.$el.on("finish.countdown", options);
+              } else {
+                this.options = $.extend({}, defaultOptions, options);
+              }
+            }
+            // Set the final date and start
+            this.setFinalDate(finalDate);
+            // Starts the countdown automatically unless it's defered,
+            // Issue #198
+            if (this.options.defer === false) {
+              this.start();
+            }
+          };
+          $.extend(Countdown.prototype, {
+            start: function () {
+              if (this.interval !== null) {
+                clearInterval(this.interval);
+              }
+              var self = this;
+              this.update();
+              this.interval = setInterval(function () {
+                self.update.call(self);
+              }, this.options.precision);
+            },
+            stop: function () {
+              clearInterval(this.interval);
+              this.interval = null;
+              this.dispatchEvent("stoped");
+            },
+            toggle: function () {
+              if (this.interval) {
+                this.stop();
+              } else {
+                this.start();
+              }
+            },
+            pause: function () {
+              this.stop();
+            },
+            resume: function () {
+              this.start();
+            },
+            remove: function () {
+              this.stop.call(this);
+              instances[this.instanceNumber] = null;
+              // Reset the countdown instance under data attr (Thanks to @assiotis)
+              delete this.$el.data().countdownInstance;
+            },
+            setFinalDate: function (value) {
+              this.finalDate = parseDateString(value); // Cast the given date
+            },
+            update: function () {
+              // Stop if dom is not in the html (Thanks to @dleavitt)
+              if (this.$el.closest("html").length === 0) {
+                this.remove();
+                return;
+              }
+              var now = new Date(),
+                newTotalSecsLeft;
+              // Create an offset date object
+              newTotalSecsLeft = this.finalDate.getTime() - now.getTime(); // Millisecs
+              // Calculate the remaining time
+              newTotalSecsLeft = Math.ceil(newTotalSecsLeft / 1000); // Secs
+              // If is not have to elapse set the finish
+              newTotalSecsLeft =
+                !this.options.elapse && newTotalSecsLeft < 0
+                  ? 0
+                  : Math.abs(newTotalSecsLeft);
+              // Do not proceed to calculation if the seconds have not changed or
+              // during the first tick
+              if (this.totalSecsLeft === newTotalSecsLeft || this.firstTick) {
+                this.firstTick = false;
+                return;
+              } else {
+                this.totalSecsLeft = newTotalSecsLeft;
+              }
+              // Check if the countdown has elapsed
+              this.elapsed = now >= this.finalDate;
+              // Calculate the offsets
+              this.offset = {
+                seconds: this.totalSecsLeft % 60,
+                minutes: Math.floor(this.totalSecsLeft / 60) % 60,
+                hours: Math.floor(this.totalSecsLeft / 60 / 60) % 24,
+                days: Math.floor(this.totalSecsLeft / 60 / 60 / 24) % 7,
+                daysToWeek: Math.floor(this.totalSecsLeft / 60 / 60 / 24) % 7,
+                daysToMonth: Math.floor((this.totalSecsLeft / 60 / 60 / 24) % 30.4368),
+                weeks: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 7),
+                weeksToMonth: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 7) % 4,
+                months: Math.floor(this.totalSecsLeft / 60 / 60 / 24 / 30.4368),
+                years: Math.abs(this.finalDate.getFullYear() - now.getFullYear()),
+                totalDays: Math.floor(this.totalSecsLeft / 60 / 60 / 24),
+                totalHours: Math.floor(this.totalSecsLeft / 60 / 60),
+                totalMinutes: Math.floor(this.totalSecsLeft / 60),
+                totalSeconds: this.totalSecsLeft,
+              };
+              // Dispatch an event
+              if (!this.options.elapse && this.totalSecsLeft === 0) {
+                this.stop();
+                this.dispatchEvent("finish");
+              } else {
+                this.dispatchEvent("update");
+              }
+            },
+            dispatchEvent: function (eventName) {
+              var event = $.Event(eventName + ".countdown");
+              event.finalDate = this.finalDate;
+              event.elapsed = this.elapsed;
+              event.offset = $.extend({}, this.offset);
+              event.strftime = strftime(this.offset);
+              this.$el.trigger(event);
+            },
+          });
+          // Register the jQuery selector actions
+          $.fn.countdown = function () {
+            var argumentsArray = Array.prototype.slice.call(arguments, 0);
+            return this.each(function () {
+              // If no data was set, jQuery.data returns undefined
+              var instanceNumber = $(this).data("countdown-instance");
+              // Verify if we already have a countdown for this node ...
+              // Fix issue #22 (Thanks to @romanbsd)
+              if (instanceNumber !== undefined) {
+                var instance = instances[instanceNumber],
+                  method = argumentsArray[0];
+                // If method exists in the prototype execute
+                if (Countdown.prototype.hasOwnProperty(method)) {
+                  instance[method].apply(instance, argumentsArray.slice(1));
+                  // If method look like a date try to set a new final date
+                } else if (String(method).match(/^[$A-Z_][0-9A-Z_$]*$/i) === null) {
+                  instance.setFinalDate.call(instance, method);
+                  // Allow plugin to restart after finished
+                  // Fix issue #38 (thanks to @yaoazhen)
+                  instance.start();
+                } else {
+                  $.error(
+                    "Method %s does not exist on jQuery.countdown".replace(
+                      /\%s/gi,
+                      method
+                    )
+                  );
+                }
+              } else {
+                // ... if not we create an instance
+                new Countdown(this, argumentsArray[0], argumentsArray[1]);
+              }
+            });
+          };
+        });
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+<script>
+(function ($) {
+  ("use strict");
+
+  // canvas menu activation
+  $(".canvas_open").on("click", function () {
+    $(".offcanvas_menu_wrapper,.off_canvars_overlay").addClass("active");
+  });
+
+  $(".canvas_close,.off_canvars_overlay").on("click", function () {
+    $(".offcanvas_menu_wrapper,.off_canvars_overlay").removeClass("active");
+  });
+
+  //   off canvas menu
+  var $offcanvasNav = $(".offcanvas_main_menu"),
+    $offcanvasNavSubMenu = $offcanvasNav.find(".sub-menu");
+  $offcanvasNavSubMenu
+    .parent()
+    .prepend(
+      '<span class="menu-expand"><i class="fa fa-angle-down"></i></span>'
+    );
+
+  $offcanvasNavSubMenu.slideUp();
+
+  $offcanvasNav.on("click", "li a, li .menu-expand", function (e) {
+    var $this = $(this);
+    if (
+      $this
+        .parent()
+        .attr("class")
+        .match(/\b(menu-item-has-children| has-children | has-sub-menu)\b/) &&
+      ($this.attr("href") === "#" || $this.hasClass("menu-expand"))
+    ) {
+      e.preventDefault();
+      if ($this.siblings("ul:visible").length) {
+        $this.siblings("ul").slideUp("slow");
+      } else {
+        $this.closest("li").siblings("li").find("ul:visible").slideUp("slow");
+        $this.siblings("ul").slideDown("slow");
+      }
+    }
+
+    if (
+      $this.is("a") ||
+      $this.is("span") ||
+      $this.attr("class").match(/\b(menu-expand)\b/)
+    ) {
+      $this.parent().toggleClass("menu-open");
+    } else if (
+      $this.is("li") &&
+      $this.attr("class").match(/\b('menu-item-has-children')\b/)
+    ) {
+      $this.toggleClass("menu-open");
+    }
+  });
+
+  //   search box slidetoggle activation
+  $(".search_box > a").on("click", function () {
+    $(this).toggleClass("active");
+    $(".search_widget").slideToggle("medium");
+  });
+
+  // slide toggle activation of mini cart
+  $(".mini_cart_wrapper > a").on("click", function () {
+    if ($(window).width() < 991) {
+      $(".mini_cart").slideToggle("medium");
+    }
+  });
+
+  // sticky header
+
+  $(window).on("scroll", function () {
+    var scroll = $(window).scrollTop();
+    if (scroll < 100) {
+      $(".sticky-header").removeClass("sticky");
+    } else {
+      $(".sticky-header").addClass("sticky");
+    }
+  });
+
+  function dataBackgroundImage() {
+    $("[data-bgimg]").each(function () {
+      var bgImgUrl = $(this).data("bgimg");
+      $(this).css({
+        "background-image": "url(" + bgImgUrl + ")",
+      });
+    });
+  }
+
+  $(window).on("load", function () {
+    dataBackgroundImage();
+  });
+
+  // slider activation
+  $(".slider_area").owlCarousel({
+    animateOut: "fadeOut",
+    autoplay: true,
+    loop: false,
+    nav: true,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    items: 1,
+    dots: false,
+    navText: [
+      '<i class="fa fa-arrow-left"></i>',
+      '<i class="fa fa-arrow-right"></i>',
+    ],
+  });
+
+  // product column of 4 activation
+  $(".product_column4")
+    .on("changed.owl.carousel initialized.owl.carousel", function (event) {
+      $(event.target)
+        .find(".owl-item")
+        .removeClass("last")
+        .eq(event.item.index + event.page.size - 1)
+        .addClass("last");
+    })
+    .owlCarousel({
+      autoplay: true,
+      loop: false,
+      nav: true,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      items: 4,
+      dots: false,
+      navText: [
+        '<i class="fa fa-arrow-left"></i>',
+        '<i class="fa fa-arrow-right"></i>',
+      ],
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        576: {
+          items: 2,
+        },
+        768: {
+          items: 3,
+        },
+        992: {
+          items: 4,
+        },
+      },
+    });
+
+  // tooltip activation
+
+  $(".action_links ul li a,.add_to_cart a,.footer_social_link ul li a").tooltip(
+    {
+      animated: "fade",
+      placement: "top",
+      container: "body",
+    }
+  );
+
+  // activation of one column of deal product
+  $(".product_column1")
+    .on("changed.owl.carousel initialized.owl.carousel", function (event) {
+      $(event.target)
+        .find(".owl-item")
+        .removeClass("last")
+        .eq(event.item.index + event.page.size - 1)
+        .addClass("last");
+    })
+    .owlCarousel({
+      autoplay: true,
+      loop: false,
+      nav: true,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      items: 4,
+      dots: false,
+      navText: [
+        '<i class="fa fa-arrow-left"></i>',
+        '<i class="fa fa-arrow-right"></i>',
+      ],
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        768: {
+          items: 2,
+        },
+        992: {
+          items: 1,
+        },
+      },
+    });
+
+  // countdown activation
+  $("[data-countdown").each(function () {
+    var $this = $(this),
+      finalDate = $(this).data("countdown");
+    $this.countdown(finalDate, function (event) {
+      $this.html(
+        event.strftime(
+          '<div class="countdown_area"><div class="single_countdown"><div class="countdown_number">%D</div><div class="countdown_title">days</div></div><div class="single_countdown"><div class="countdown_number">%H</div><div class="countdown_title">Hours</div></div><div class="single_countdown"><div class="countdown_number">%M</div><div class="countdown_title">mins</div></div><div class="single_countdown"><div class="countdown_number">%S</div><div class="countdown_title">secs</div></div></div>'
+        )
+      );
+    });
+  });
+
+  // activation of one column of Best seller product
+  $(".sidebar_product_column1")
+    .on("changed.owl.carousel initialized.owl.carousel", function (event) {
+      $(event.target)
+        .find(".owl-item")
+        .removeClass("last")
+        .eq(event.item.index + event.page.size - 1)
+        .addClass("last");
+    })
+    .owlCarousel({
+      autoplay: true,
+      loop: false,
+      nav: true,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      items: 4,
+      dots: false,
+      navText: [
+        '<i class="fa fa-arrow-left"></i>',
+        '<i class="fa fa-arrow-right"></i>',
+      ],
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        768: {
+          items: 2,
+          margin: 30,
+        },
+        992: {
+          items: 1,
+        },
+      },
+    });
+
+  // Testimonial activation
+  $(".testimonial_sidebar_carousel").owlCarousel({
+    autoplay: true,
+    loop: true,
+    nav: true,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    items: 1,
+    dots: false,
+    navText: [
+      '<i class="fa fa-arrow-left"></i>',
+      '<i class="fa fa-arrow-right"></i>',
+    ],
+  });
+
+  // activation of one column of Best seller product
+  $(".product_column3")
+    .on("changed.owl.carousel initialized.owl.carousel", function (event) {
+      $(event.target)
+        .find(".owl-item")
+        .removeClass("last")
+        .eq(event.item.index + event.page.size - 1)
+        .addClass("last");
+    })
+    .owlCarousel({
+      autoplay: true,
+      loop: false,
+      nav: true,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      items: 4,
+      dots: false,
+      navText: [
+        '<i class="fa fa-arrow-left"></i>',
+        '<i class="fa fa-arrow-right"></i>',
+      ],
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        567: {
+          items: 2,
+        },
+        768: {
+          items: 3,
+        },
+        992: {
+          items: 3,
+        },
+      },
+    });
+
+  // activation of blog section
+  $(".blog_column3").owlCarousel({
+    autoplay: true,
+    loop: false,
+    nav: true,
+    autoplay: false,
+    autoplayTimeout: 5000,
+    items: 4,
+    dots: false,
+    navText: [
+      '<i class="fa fa-arrow-left"></i>',
+      '<i class="fa fa-arrow-right"></i>',
+    ],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      768: {
+        items: 2,
+      },
+      992: {
+        items: 3,
+      },
+    },
+  });
+
+  // Small product column 1 activation
+  $(".small_product_column1")
+    .on("changed.owl.carousel initialized.owl.carousel", function (event) {
+      $(event.target)
+        .find(".owl-item")
+        .removeClass("last")
+        .eq(event.item.index + event.page.size - 1)
+        .addClass("last");
+    })
+    .owlCarousel({
+      autoplay: true,
+      loop: false,
+      nav: false,
+      autoplay: false,
+      autoplayTimeout: 5000,
+      items: 4,
+      dots: false,
+      navText: [
+        '<i class="fa fa-arrow-left"></i>',
+        '<i class="fa fa-arrow-right"></i>',
+      ],
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        568: {
+          items: 2,
+          margin: 15,
+        },
+        768: {
+          items: 1,
+        },
+      },
+    });
+
+  // activation of small nav active
+  $(".product_navactive").owlCarousel({
+    autoplay: false,
+    loop: false,
+    nav: true,
+    items: 4,
+    dots: false,
+    navText: [
+      '<i class="fa fa-angle-left"></i>',
+      '<i class="fa fa-angle-right"></i>',
+    ],
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      250: {
+        items: 2,
+      },
+      480: {
+        items: 3,
+      },
+      768: {
+        items: 4,
+      },
+    },
+  });
+
+  $(".modal").on("shown.bs.modal", function (e) {
+    $(".product_navactive").resize();
+  });
+  $(".product_navactive a").on("click", function (e) {
+    e.preventDefault();
+
+    var $href = $(this).attr("href");
+
+    $(".product_navactive a").removeClass("active");
+    $(this).addClass("active");
+
+    $(".product-details-large .tab-pane").removeClass("active show");
+    $(".product-details-large " + $href).addClass("active show");
+  });
+
+  $(".select_option").niceSelect();
+})(jQuery);
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,1032 @@
+{% extends 'base.html' %}
+{% block title %}{{product.name}}{% endblock title %}
+{% block content %}
+{% load i18n %}
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: hsl(0, 0%, 0%);
+  --pale-orange: hsl(25, 100%, 94%);
+  --very-dark-blue: hsl(220, 13%, 13%);
+  --dark-grayish-blue: hsl(219, 9%, 45%);
+  --grayish-blue: hsl(220, 14%, 75%);
+  --light-grayish-blue: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --black-with-opacity: hsla(0, 0%, 0%, 0.75);
+}
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-grayish-blue);
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+  padding-top: 100px;
+}
+
+.container {
+  max-width: 1120px;
+  min-height: 100vh;
+  padding: 0 5px;
+  margin: auto;
+}
+
+.alert {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Main */
+.main {
+  display: flex;
+  gap: 125px;
+  min-height: 570px;
+  align-items: center;
+  padding: 0 50px;
+}
+
+/* Image gallery */
+.gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.gallery .main-img img {
+  display: none;
+}
+
+.gallery .main-img img.active {
+  display: inline-block;
+  max-width: 445px;
+  max-height: 445px;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.gallery .thumb-list {
+  display: flex;
+  justify-content: space-between;
+  max-width: 445px;
+  width: 100%;
+}
+
+.gallery .thumb-list div {
+  max-width: 90px;
+  max-height: 90px;
+  margin: 0 2px;
+}
+
+.gallery .thumb-list img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery .thumb-list img:hover {
+  opacity: 50%;
+}
+
+.gallery .thumb-list .active img {
+  opacity: 30%;
+}
+
+.gallery .thumb-list .active {
+  border: 2px solid var(--orange);
+  border-radius: 13px;
+  margin: 0;
+}
+
+/* lightbox */
+.lightbox {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  background: var(--black-with-opacity);
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox.active .gallery {
+  max-width: 445px;
+}
+
+.lightbox .main-img {
+  position: relative;
+}
+
+.lightbox .icon-prev,
+.lightbox .icon-next {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  border-radius: 50%;
+}
+
+.icon-prev:hover,
+.icon-next:hover {
+  cursor: pointer;
+}
+
+/* .icon-prev svg path {
+  fill: var(--orange);
+} */
+
+.icon-prev {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-next {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.icon-close svg path {
+  fill: var(--white);
+}
+
+.icon-close svg path:hover {
+  cursor: pointer;
+  fill: var(--black);
+}
+
+.icon-close {
+  position: absolute;
+  right: 0;
+  top: -40px;
+}
+
+/* Content */
+
+.content {
+  flex: 1;
+}
+.content h3 {
+  font-size: 16px;
+  color: var(--black);
+}
+
+.content h2 {
+  font-size: 37px;
+  margin: 20px 0 40px 0;
+}
+
+.content p {
+  font-size: 16px;
+  color: var(--dark-grayish-blue);
+  margin-bottom: 30px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.current-price {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.discount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: 10%;
+  height: 25px;
+  background-color: var(--grayish-blue);
+  font-weight: 700;
+}
+
+.prev-price {
+  margin: 10px 0 35px 0;
+  font-size: 18px;
+  color: var(--grayish-blue);
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.add-to-cart-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  width: 150px;
+  height: 55px;
+  background: var(--light-grayish-blue);
+}
+
+.counter button {
+  width: 50px;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+
+.counter .count {
+  font-weight: 700;
+}
+
+.add-to-cart {
+  color: var(--white);
+  background-color: var(--black);
+  border: 0px;
+  height: 55px;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 15px 0;
+
+}
+
+.add-to-cart svg path {
+  fill: var(--white);
+}
+
+
+/* Mobile */
+
+@media (max-width: 755px) {
+  .navbar {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  .nav-first,
+  .nav-second {
+    gap: 30px;
+    padding-bottom: 10px;
+  }
+
+  .nav-first .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    max-width: 220px;
+    width: 100%;
+    height: 100vh;
+    background: var(--white);
+    align-items: start;
+    z-index: 15;
+    padding: 25px 30px;
+  }
+
+  .nav-first .backdrop.active {
+    background: var(--black-with-opacity);
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -5px;
+    z-index: 11;
+  }
+
+  .nav-links.active .close-icon {
+    display: inline-block;
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+
+  .nav-links a {
+    font-weight: 700;
+    color: black;
+  }
+
+  .nav-links.active a:hover::after {
+    bottom: -5px;
+  }
+
+  /* main */
+
+  .main {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .main .default {
+    display: none;
+  }
+
+  .lightbox {
+    display: flex;
+    position: relative;
+    height: auto;
+    width: auto;
+    background: none;
+  }
+
+  .main .thumb-list {
+    display: none;
+  }
+
+  .main .icon-prev {
+    left: 50px;
+    height: 45px;
+    width: 45px;
+  }
+
+  .main .icon-next {
+    right: 50px;
+    height: 45px;
+    width: 45px;
+  }
+
+  .gallery .main-img img.active {
+    max-width: none;
+    max-height: none;
+    width: 100vw;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .content {
+    padding: 0 20px;
+  }
+
+  .content h2 {
+    margin: 10px 0;
+    font-size: 30px;
+  }
+
+  .price-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .prev-price {
+    margin: 0;
+  }
+
+  .add-to-cart-container {
+    flex-direction: column;
+  }
+
+  .counter {
+    width: 100%;
+  }
+
+  .counter button {
+    width: 40%;
+  }
+
+  .cart-container {
+    z-index: 20;
+    right: -85px;
+    top: 40px;
+  }
+}
+
+/* Sliding animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.main-img img {
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.main-img img.active {
+  animation: slide-in 0.5s ease-in-out;
+  display: inline-block;
+  opacity: 1;
+}
+.stars {
+  display: inline-block;
+}
+
+.stars i {
+  margin-right: 2px;
+}
+
+.add-review input[type="radio"] {
+  display: none;
+}
+
+.add-review input[type="radio"] + label {
+  font-size: 2rem;
+  color: gray;
+  cursor: pointer;
+}
+
+.add-review input[type="radio"]:checked + label {
+  color: #ffc107; /* Yellow for selected stars */
+}
+/* Recommendations Section */
+/* Card Styles */
+.product-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure all cards have the same height */
+    overflow: hidden;
+}
+
+/* Image Styling */
+.product-card img {
+    height: 200px; /* Fixed height for image */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0; /* Rounded corners on top */
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Card Body */
+.product-card .card-body {
+    flex-grow: 1; /* Push content to the bottom of the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Card Title */
+.product-card .card-title {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.product-card .card-title:hover {
+    color: #007bff; /* Add color change on hover */
+}
+
+/* Card Price */
+.product-card .card-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+.product-card .btn-primary {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background-color: #007bff;
+    border-color: #007bff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Hover Effects for Card */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .product-card img {
+        height: 150px;
+        object-fit: cover;
+    }
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in animation */
+.product-card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
+</style>
+    <div class="container">
+      <section class="main">
+        <div class="default gallery">
+          <div class="main-img">
+            {% if product.image1 %}
+              <img
+                class="active"
+                src="{{ product.image1.url }}" alt="{{ product.name }}"
+                alt="product-img"
+              />
+              {% endif %}
+              {% if product.image2 %}
+              <img src="{{ product.image2.url }}" alt="{{ product.name }}" alt="product-img" />
+              {% endif %}
+              {% if product.image3 %}
+              <img src="{{ product.image3.url }}" alt="product-img" />
+              {% endif %}
+              {% if product.image4 %}
+              <img src="{{ product.image4.url }}" alt="product-img" />
+              {% endif %}
+          </div>
+          <div class="thumb-list">
+            <div class="active">
+              {% if product.image1 %}
+            <img
+              class="active"
+              src="{{ product.image1.url }}" alt="{{ product.name }}"
+              alt="product-img"
+            />
+            {% endif %}
+            </div>
+            <div>
+              {% if product.image2 %}
+            <img src="{{ product.image2.url }}" alt="{{ product.name }}" alt="product-img" />
+            {% endif %}
+            </div>
+            <div>
+              {% if product.image3 %}
+            <img src="{{ product.image3.url }}" alt="product-img" />
+            {% endif %}
+            </div>
+            <div>
+              {% if product.image4 %}
+            <img src="{{ product.image4.url }}" alt="product-img" />
+            {% endif %}
+            </div>
+          </div>
+        </div>
+    
+
+        <div class="lightbox">
+          <div class="gallery">
+            <div class="main-img">
+              <!-- icons -->
+              <span class="icon-close">
+                <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                    fill="#69707D"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span class="icon-prev">
+                <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11 1 3 9l8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              <span class="icon-next">
+                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m2 1 8 8-8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </span>
+              {% if product.image1 %}
+              <img
+                class="active"
+                src="{{ product.image1.url }}" alt="{{ product.name }}"
+                alt="product-img"
+              />
+              {% endif %}
+              {% if product.image2 %}
+              <img src="{{ product.image2.url }}" alt="{{ product.name }}" alt="product-img" />
+              {% endif %}
+              {% if product.image3 %}
+              <img src="{{ product.image3.url }}" alt="product-img" />
+              {% endif %}
+              {% if product.image4 %}
+              <img src="{{ product.image4.url }}" alt="product-img" />
+              {% endif %}
+            </div>
+            <div class="thumb-list">
+              <div class="active">
+                {% if product.image1 %}
+              <img
+                class="active"
+                src="{{ product.image1.url }}" alt="{{ product.name }}"
+                alt="product-img"
+              />
+              {% endif %}
+              </div>
+              <div>
+                {% if product.image2 %}
+              <img src="{{ product.image2.url }}" alt="{{ product.name }}" alt="product-img" />
+              {% endif %}
+              </div>
+              <div>
+                {% if product.image3 %}
+              <img src="{{ product.image3.url }}" alt="product-img" />
+              {% endif %}
+              </div>
+              <div>
+                {% if product.image4 %}
+              <img src="{{ product.image4.url }}" alt="product-img" />
+              {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <h3>{{ product.country }}</h3>
+          <h2 class="product-name">{{ product.name }}</h2>
+          <p class="product-desc">
+            {{ description }}
+          </p>
+          <div class="price-info">
+            <div class="price">
+              <span class="current-price">{{ product.price }} sum</span>
+            </div>
+            <div class="prev-price">{{ product.original_price }} sum</div>
+          </div>
+              <a href="{% url 'add_to_cart' product.id %}" class="add-to-cart">
+
+                <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                    fill="#69707D"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+              {% trans "Add to cart"%}
+            </a>
+              <a href="{% url 'add_to_favorites' product.id %}" class="add-to-cart">{% trans "Add to favorites"%}</a>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Add this somewhere in your base.html to display the messages -->
+{% if messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{% trans "Success!"%}</strong> 
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<div class="container mt-5 p-4 border rounded bg-light shadow">
+  <h2 class="text-primary mb-4">{% trans "Customer Reviews"%}</h2>
+
+  <!-- Average Rating Section -->
+
+<div class="text-center mb-5">
+  <div class="mb-2">
+    {% for star in "12345" %}
+      {% if forloop.counter <= average_rating %}
+        <i class="fa fa-star text-warning"></i>
+      {% else %}
+        <i class="fa fa-star text-secondary"></i>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <p>{% trans "Average Rating"%}: 
+    {% for i in full_stars_list %}
+        <span class="fa fa-star text-warning"></span> <!-- Filled star -->
+    {% endfor %}
+    {% for i in empty_stars_list %}
+        <span class="fa fa-star-o text-muted"></span> <!-- Empty star -->
+    {% endfor %}
+</p>
+
+
+</div>
+
+
+  <!-- Reviews List -->
+  <div class="reviews-list">
+    {% for review in reviews %}
+    <div class="card mb-4 shadow-sm">
+      <div class="card-body">
+        <h5 class="card-title text-dark">
+          {{ review.user.username }}
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          {% for star in "12345" %}
+            {% if forloop.counter <= review.rating %}
+              <i class="fa fa-star text-warning"></i>
+            {% else %}
+              <i class="fa fa-star text-secondary"></i>
+            {% endif %}
+          {% endfor %}
+        </h6>
+        <p class="card-text">{{ review.comment }}</p>
+        <small class="text-muted">{% trans "Posted on"%} {{ review.created_at|date:"F j, Y" }}</small>
+      </div>
+    </div>
+    {% empty %}
+    <p class="text-center text-muted">{% trans "No reviews yet. Be the first to leave one!"%}</p>
+    {% endfor %}
+  </div>
+
+  <!-- Add Review Form -->
+  <div class="card mt-5">
+    <div class="card-body">
+      <h3 class="card-title text-primary">{% trans "Leave a Review"%}</h3>
+      <form method="post" class="mt-3">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="rating" class="form-label">{% trans "Your Rating"%}</label>
+          <!-- Interactive Stars -->
+          <div id="star-rating" class="mb-3">
+            {% for i in "12345" %}
+            <i class="fa fa-star text-secondary rating-star" data-value="{{ forloop.counter }}" style="font-size: 24px; cursor: pointer;"></i>
+            {% endfor %}
+          </div>
+          <input type="hidden" name="rating" id="rating-input" required />
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">{% trans "Your Review" %}</label>
+          <textarea
+            name="comment"
+            id="comment"
+            class="form-control"
+            rows="3"
+            placeholder="{% trans "Write your review here..."%}"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">{% trans "Submit Review"%}</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<h3 style="margin: 80px 0;">{% trans "You may also like"%}</h3>
+<div class="row">
+    {% for p in recommended_products %}
+    <a href="{% url 'product_detail' p.pk %}">
+        <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="card product-card">
+                <img src="{{ p.image1.url }}" class="card-img-top" alt="{{ p.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.name }}</h5>
+                    <p class="card-text">{{ p.price }} </p>
+                    <a href="{% url 'product_detail' p.id %}" class="btn btn-primary" style="font-size: 13px;">{% trans "Details" %}</a>
+                </div>
+            </div>
+        </div>
+      </a>
+    {% endfor %}
+</div>
+
+
+<script>
+  // JavaScript for interactive star rating
+  const stars = document.querySelectorAll(".rating-star");
+  const ratingInput = document.getElementById("rating-input");
+
+  stars.forEach((star) => {
+    star.addEventListener("click", function () {
+      const value = this.getAttribute("data-value");
+
+      // Update hidden input value
+      ratingInput.value = value;
+
+      // Highlight stars up to the clicked one
+      stars.forEach((s, index) => {
+        if (index < value) {
+          s.classList.remove("text-secondary");
+          s.classList.add("text-warning");
+        } else {
+          s.classList.remove("text-warning");
+          s.classList.add("text-secondary");
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Add this script to automatically hide the success message after 10 seconds -->
+<script>
+  setTimeout(function() {
+      const alert = document.querySelector('.alert');
+      if (alert) {
+          alert.classList.add('fade');
+      }
+  }, 10000);  // 10 seconds
+</script>
+
+<script>
+    const mainImages = document.querySelectorAll(".default .main-img img");
+const thumbnails = document.querySelectorAll(".default .thumb-list div");
+const lightboxMainImages = document.querySelectorAll(".lightbox .main-img img");
+const lightboxThumbnails = document.querySelectorAll(
+  ".lightbox .thumb-list div"
+);
+const lightbox = document.querySelector(".lightbox");
+const iconClose = document.querySelector(".icon-close");
+const iconPrev = document.querySelector(".icon-prev");
+const iconNext = document.querySelector(".icon-next");
+
+let currentImageIndex = 0;
+
+const changeImage = (index, mainImages, thumbnails) => {
+  mainImages.forEach((img) => {
+    img.classList.remove("active");
+  });
+  thumbnails.forEach((thumb) => {
+    thumb.classList.remove("active");
+  });
+
+  mainImages[index].classList.add("active");
+  thumbnails[index].classList.add("active");
+  currentImageIndex = index;
+};
+
+thumbnails.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => {
+    changeImage(index, mainImages, thumbnails);
+  });
+});
+
+lightboxThumbnails.forEach((thumb, index) => {
+  thumb.addEventListener("click", () => {
+    changeImage(index, lightboxMainImages, lightboxThumbnails);
+  });
+});
+
+mainImages.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("active");
+    changeImage(index, lightboxMainImages, lightboxThumbnails);
+  });
+});
+
+iconPrev.addEventListener("click", () => {
+  if (currentImageIndex <= 0) {
+    changeImage(mainImages.length - 1, lightboxMainImages, lightboxThumbnails);
+  } else {
+    changeImage(currentImageIndex - 1, lightboxMainImages, lightboxThumbnails);
+  }
+});
+
+iconNext.addEventListener("click", () => {
+  if (currentImageIndex >= mainImages.length - 1) {
+    changeImage(0, lightboxMainImages, lightboxThumbnails);
+  } else {
+    changeImage(currentImageIndex + 1, lightboxMainImages, lightboxThumbnails);
+  }
+});
+
+iconClose.addEventListener("click", () => {
+  lightbox.classList.remove("active");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const images = document.querySelectorAll(".main-img img");
+  const thumbnails = document.querySelectorAll(".thumb-list div");
+
+  let activeIndex = 0;
+
+  // Function to switch images
+  const switchImage = (newIndex) => {
+    if (newIndex === activeIndex) return;
+
+    const currentImage = images[activeIndex];
+    const nextImage = images[newIndex];
+
+    // Add slide-out animation to the current image
+    currentImage.classList.remove("active");
+    currentImage.style.animation = "slide-out 0.5s ease-in-out";
+
+    // Add slide-in animation to the next image
+    setTimeout(() => {
+      nextImage.classList.add("active");
+      nextImage.style.animation = "slide-in 0.5s ease-in-out";
+    }, 500);
+
+    // Update active thumbnail
+    thumbnails[activeIndex].classList.remove("active");
+    thumbnails[newIndex].classList.add("active");
+
+    activeIndex = newIndex;
+  };
+
+  // Add click event to thumbnails
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+      switchImage(index);
+    });
+  });
+});
+
+</script>
+
+</body>
+{% endblock content %}

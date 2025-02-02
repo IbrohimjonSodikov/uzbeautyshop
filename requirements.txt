@@ -1,0 +1,7 @@
+django
+django-jet-reboot
+django-crispy-forms
+crispy-bootstrap5
+django-ckeditor
+django-modeltranslation
+pillow

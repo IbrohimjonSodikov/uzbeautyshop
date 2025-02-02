@@ -1,0 +1,1013 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-31 15:04+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: accounts/forms.py:12 templates/checkout.html:338
+msgid "Phone number"
+msgstr "Telefon raqamingiz"
+
+#: products/views.py:40
+msgid "Thank you for your message! We'll get back to you shortly."
+msgstr "Xabaringiz uchun rahmat! Tez orada sizga xabar beramiz."
+
+#: products/views.py:215
+msgid "Product added to your cart! Go to your cart to order"
+msgstr "Mahsulot savatingizga qo'shildi! Buyurtma berish uchun savatga boring"
+
+#: products/views.py:228
+msgid "Product added to your favorites!"
+msgstr "Mahsulot sevimlilarga qo'shildi!"
+
+#: products/views.py:321
+msgid "Your cart is empty. Please add something first!"
+msgstr "Sizning savatingiz bo'sh. Iltimos, avval nimadir qo'shing!"
+
+#: products/views.py:351
+msgid "Your order has been successfully placed!"
+msgstr "Buyurtmangiz muvaffaqiyatli yuborildi!"
+
+#: templates/about.html:10 templates/base.html:180 templates/base.html:317
+#: templates/base.html:445
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+#: templates/about.html:11
+msgid ""
+"Discover our story, mission, and vision as we strive to inspire beauty and "
+"confidence around the world."
+msgstr ""
+"Butun dunyo bo'ylab go'zallik va ishonchni ilhomlantirishga intilar ekanmiz, "
+"bizning hikoyamiz, vazifamiz va qarashlarimizni kashf eting."
+
+#: templates/about.html:20
+msgid "Our Mission"
+msgstr "Bizning vazifamiz"
+
+#: templates/about.html:21
+msgid ""
+"We aim to empower every individual by providing them with exceptional beauty "
+"products that not only enhance their appearance but also boost their "
+"confidence. Our commitment is to deliver quality with integrity and passion."
+msgstr ""
+"Biz har bir insonga nafaqat tashqi ko'rinishini yaxshilaydigan, balki o'ziga "
+"bo'lgan ishonchni ham oshiradigan ajoyib go'zallik mahsulotlarini taqdim "
+"etish orqali ularni kuchaytirishni maqsad qilganmiz. Bizning majburiyatimiz "
+"sifatni yaxlitlik va ishtiyoq bilan yetkazib berishdir."
+
+#: templates/about.html:28
+msgid "Our Vision"
+msgstr "Bizning qarashimiz"
+
+#: templates/about.html:29
+msgid ""
+"To lead the beauty industry by creating a lasting impact on the lives of "
+"millions, making beauty accessible to all while prioritizing sustainability, "
+"inclusivity, and innovation."
+msgstr ""
+"Barqarorlik, inklyuzivlik va innovatsiyalarni birinchi oʻringa qoʻyib, "
+"goʻzallikni barcha uchun ochiq qilib, millionlab insonlar hayotiga doimiy "
+"taʼsir koʻrsatish orqali goʻzallik sanoatini boshqarish."
+
+#: templates/about.html:38
+msgid "Our Core Values"
+msgstr "Bizning asosiy maqsadlarimiz"
+
+#: templates/about.html:39
+msgid "The principles that guide us and keep us grounded in everything we do."
+msgstr ""
+"Bizni boshqaradigan va biz qilayotgan har bir ishda asoslanib turadigan "
+"tamoyillar."
+
+#: templates/about.html:47
+msgid "Passion"
+msgstr "Qiziqish"
+
+#: templates/about.html:48
+msgid ""
+"Driven by passion, we create beauty with heart, focusing on quality and "
+"detail in everything we do."
+msgstr ""
+"Qiziqishga tayanib, biz har bir ishda sifat va tafsilotlarga e'tibor "
+"qaratib, yurak bilan go'zallikni yaratamiz."
+
+#: templates/about.html:56
+msgid "Sustainability"
+msgstr "Barqarorlik"
+
+#: templates/about.html:57
+msgid ""
+"We prioritize the planet by embracing sustainable practices in our products "
+"and operations."
+msgstr ""
+"Biz o'z mahsulotlarimiz va operatsiyalarimizda barqaror amaliyotlarni "
+"qo'llash orqali sayyoramizga ustuvor ahamiyat beramiz."
+
+#: templates/about.html:65
+msgid "Inclusivity"
+msgstr "Inklyuzivlik"
+
+#: templates/about.html:66
+msgid ""
+"We believe in inclusivity, offering beauty solutions for all, regardless of "
+"background or identity."
+msgstr ""
+"Biz inklyuzivlikka ishonamiz, kelib chiqishi yoki kimligidan qat'i nazar, "
+"barcha uchun go'zallik echimlarini taklif qilamiz."
+
+#: templates/about.html:74
+msgid "Innovation"
+msgstr "Innovatsiya"
+
+#: templates/about.html:75
+msgid ""
+"Constantly evolving, we push the boundaries of beauty with innovative "
+"products and technologies."
+msgstr ""
+"Doimiy ravishda rivojlanib, biz innovatsion mahsulotlar va texnologiyalar "
+"bilan go'zallik chegaralarini kengaytiramiz."
+
+#: templates/about.html:84
+msgid "Join Us in Our Mission"
+msgstr "Missiyamizga qo'shiling"
+
+#: templates/about.html:85
+msgid ""
+"Be a part of our journey as we continue to make a difference in the beauty "
+"world. We welcome you to stay connected with us and be part of the change!"
+msgstr ""
+"Go'zallik olamida o'zgarishlar qilishda davom etayotganimiz uchun "
+"sayohatimizning bir qismi bo'ling. Biz bilan aloqada bo'lishingiz va "
+"o'zgarishlarning bir qismi bo'lishingiz uchun sizni tabriklaymiz!"
+
+#: templates/about.html:87
+msgid "Get in Touch "
+msgstr "Biz bilan aloqaga chiqing"
+
+#: templates/allproducts.html:439 templates/country_products.html:209
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: templates/allproducts.html:463
+msgid ""
+"Tap here to explore categories and choose your perfect match from our "
+"luxurious collection."
+msgstr ""
+"Kategoriyalarni tanlash uchun bu yerga bosin va bizning kolleksiyamizdan "
+"o'zingizga yoqqanini tanlang"
+
+#: templates/allproducts.html:486 templates/country_products.html:249
+msgid "Buy Now"
+msgstr "Sotib olish"
+
+#: templates/article_detail.html:20
+msgid "All Blogs"
+msgstr "Barcha Yangiliklar"
+
+#: templates/article_detail.html:27
+msgid "Comments"
+msgstr "Izohlar"
+
+#: templates/article_detail.html:53
+msgid "No comments yet. Be the first to comment!"
+msgstr "Hozircha izohlar yo‘q. Birinchi bo'lib fikr bildiring!"
+
+#: templates/article_detail.html:61
+msgid "Leave a Comment"
+msgstr "Izoh qoldiring"
+
+#: templates/article_detail.html:72
+msgid "Write your comment here..."
+msgstr "Izogingizni shu yerga yozing..."
+
+#: templates/article_detail.html:77
+msgid "Submit"
+msgstr "Yuborish"
+
+#: templates/article_detail.html:81 templates/base.html:197
+#: templates/base.html:333 templates/registration/login.html:28
+#: templates/registration/signup.html:20
+msgid "Login"
+msgstr "Kirish"
+
+#: templates/article_detail.html:81
+msgid "to leave a comment"
+msgstr "izoh qoldirish uchun tizimga kiring"
+
+#: templates/article_list.html:8
+msgid "Our Blog"
+msgstr "Yangiliklar"
+
+#: templates/article_list.html:22
+msgid "Read more"
+msgstr "Ko'proq o'qish"
+
+#: templates/base.html:136 templates/base.html:274
+msgid "Home"
+msgstr "Asosiy"
+
+#: templates/base.html:139 templates/base.html:277
+msgid "Brands"
+msgstr "Brendlar"
+
+#: templates/base.html:142 templates/base.html:281 templates/home.html:87
+msgid "Germany"
+msgstr "Germaniya"
+
+#: templates/base.html:144 templates/home.html:163
+#, fuzzy
+#| msgid "All products"
+msgid "All German products"
+msgstr "Barcha maxsulotlar"
+
+#: templates/base.html:153 templates/base.html:292 templates/home.html:93
+msgid "France"
+msgstr "Fransiya"
+
+#: templates/base.html:155 templates/home.html:214
+#, fuzzy
+#| msgid "All products"
+msgid "All French products"
+msgstr "Barcha maxsulotlar"
+
+#: templates/base.html:164 templates/base.html:302 templates/home.html:99
+msgid "Italy"
+msgstr "Italiya"
+
+#: templates/base.html:166 templates/home.html:266
+#, fuzzy
+#| msgid "All products"
+msgid "All Italian products"
+msgstr "Barcha maxsulotlar"
+
+#: templates/base.html:177 templates/base.html:315
+msgid "Blog"
+msgstr "Yangiliklar"
+
+#: templates/base.html:182 templates/base.html:318 templates/contactus.html:14
+#: templates/contactus.html:49
+msgid "Contact Us"
+msgstr "Biz bilan aloqa"
+
+#: templates/base.html:185 templates/base.html:321
+msgid "Your profile"
+msgstr "Sizning profilingiz"
+
+#: templates/base.html:187 templates/base.html:323
+msgid "Welcome: "
+msgstr "Xush kelibsiz"
+
+#: templates/base.html:188 templates/base.html:324
+msgid "Order history"
+msgstr "Buyurtmalar tarixi"
+
+#: templates/base.html:189
+msgid "Change password"
+msgstr "Parolni o'zgartirish"
+
+#: templates/base.html:190 templates/base.html:326
+msgid "Logout"
+msgstr "Chiqish"
+
+#: templates/base.html:195 templates/base.html:331
+msgid "Join us"
+msgstr "Bizga qo'shiling"
+
+#: templates/base.html:198 templates/base.html:334
+#: templates/registration/signup.html:4
+msgid "Sign up"
+msgstr "Ro'yxattan o'tish"
+
+#: templates/base.html:204 templates/base.html:340
+msgid "Orders"
+msgstr "Buyurtmalar"
+
+#: templates/base.html:207 templates/base.html:343
+msgid "Messages"
+msgstr "Xabarlar"
+
+#: templates/base.html:325 templates/registration/password_change_form.html:15
+#: templates/registration/password_reset_confirm.html:15
+msgid "Change Password"
+msgstr "Parolni o'zgartirish"
+
+#: templates/base.html:431
+msgid ""
+"Get all types of cosmetics from us within 14 day delivery. We can even order "
+"the cosmetics which are not in our database. To do that kindly send a E-mail "
+"to the company's mail id."
+msgstr ""
+"Barcha turdagi istalgan kosmetika maxsulotlarini 14 kun ichida qabul qiling. "
+"Undan tashqari, bizda yo'q maxsulotlarni buyurtma qilishni xoxlasangiz, "
+"iltimos bizga murojaat qiling:"
+
+#: templates/base.html:442
+msgid "Information"
+msgstr "Ma'lumotlar"
+
+#: templates/base.html:446
+msgid "Prices"
+msgstr "Narxlar"
+
+#: templates/base.html:447
+msgid "Terms & Conditions"
+msgstr "Foydalanish shartlari"
+
+#: templates/base.html:448 templates/base.html:461
+msgid "Order History"
+msgstr "Buyurtmalar tarixi"
+
+#: templates/base.html:449 templates/base.html:462
+msgid "Wish List"
+msgstr "Istaklar roʻyxati"
+
+#: templates/base.html:450
+msgid "Specials"
+msgstr "Siz uchun maxsus"
+
+#: templates/base.html:463
+msgid "Newsletter"
+msgstr "Gazeta"
+
+#: templates/brand_products.html:176
+msgid "Price"
+msgstr "Narxi"
+
+#: templates/brand_products.html:177 templates/cart.html:19
+#: templates/favorites.html:18
+msgid "View Details"
+msgstr "Batafsil"
+
+#: templates/brand_products.html:184
+msgid "No products available from this brand."
+msgstr "Bu brending hech qanday maxsulorlari topilmadi."
+
+#: templates/brand_products.html:187 templates/country_products.html:223
+#: templates/home.html:619
+msgid "All products"
+msgstr "Barcha maxsulotlar"
+
+#: templates/cart.html:5
+msgid "Your Cart"
+msgstr "Savat"
+
+#: templates/cart.html:15
+msgid "Quantity:"
+msgstr "Soni:"
+
+#: templates/cart.html:16 templates/search_results.html:101
+msgid "Price:"
+msgstr "Narx:"
+
+#: templates/cart.html:17
+msgid "Total:"
+msgstr "Jami:"
+
+#: templates/cart.html:20 templates/favorites.html:19
+msgid "Remove"
+msgstr "O'chirish"
+
+#: templates/cart.html:31
+msgid "Total Price:"
+msgstr "Umumiy Narx:"
+
+#: templates/cart.html:32
+msgid "Proceed to Checkout"
+msgstr "Sotib olish"
+
+#: templates/cart.html:42
+msgid "Oops! Your cart is currently empty."
+msgstr "Voy! Savatingiz hozir boʻsh."
+
+#: templates/cart.html:43
+msgid ""
+"It looks like you haven’t added any products yet. Don’t worry, it’s just a "
+"few clicks away!"
+msgstr ""
+"Siz hali hech qanday mahsulot qo'shmaganga o'xshaysiz. Avval maxsulotlarni "
+"ko'rib chiqing!"
+
+#: templates/cart.html:44 templates/favorites.html:33
+msgid "Browse Products"
+msgstr "Mahsulotlarni ko'rib chiqish"
+
+#: templates/cart.html:45
+msgid "Start shopping now and fill your cart with amazing items!"
+msgstr ""
+"Hozir xarid qilishni boshlang va savatingizni ajoyib narsalar bilan "
+"to'ldiring!"
+
+#: templates/checkout.html:323
+msgid "Fill checkout information"
+msgstr "To'lov ma'lumotlarini to'ldiring"
+
+#: templates/checkout.html:331
+msgid "Billing Address"
+msgstr "Malumotlar"
+
+#: templates/checkout.html:332
+msgid "Full Name"
+msgstr "To'liq ism"
+
+#: templates/checkout.html:333 templates/contactus.html:60
+msgid "Enter your full name"
+msgstr "To'liq ismingizni kiriting"
+
+#: templates/checkout.html:334
+msgid "Email"
+msgstr "Email"
+
+#: templates/checkout.html:335 templates/contactus.html:64
+msgid "Enter your email"
+msgstr "Elektron pochta"
+
+#: templates/checkout.html:336
+msgid "Address"
+msgstr "Manzil"
+
+#: templates/checkout.html:337
+msgid "Your full address for delivery"
+msgstr "Sizning to'liq manzilingiz (yetkazib berish uchun)"
+
+#: templates/checkout.html:339
+msgid "Your phone number"
+msgstr "Telefon raqamingiz"
+
+#: templates/checkout.html:340
+msgid "Product Specifications (Optional)"
+msgstr "Mahsulot xususiyatlari (ixtiyoriy)"
+
+#: templates/checkout.html:341
+msgid "For example: I need lipstick's pink color"
+msgstr "Misol uchun: Menga lab bo'yog'ini pushti rangi kerak"
+
+#: templates/checkout.html:345
+msgid "Payment"
+msgstr "To'lov"
+
+#: templates/checkout.html:348
+msgid "Please select payment type"
+msgstr "Iltimos, to'lov turini tanlang"
+
+#: templates/checkout.html:350
+msgid "By Cash"
+msgstr "Naqd"
+
+#: templates/checkout.html:351
+msgid "By Card (Coming Soon)"
+msgstr "Karta orqali (Tez orada)"
+
+#: templates/checkout.html:355
+msgid ""
+"Once you place your order, it cannot be undone. We can not take it back. "
+"Please be sure before proceeding. "
+msgstr ""
+"Zakas berganingizdan so'ng, uni bekor qilib bo'lmaydi. Biz qaytarib "
+"olmaymiz. Iltimos buyurtma berishdan avval buyurtmangizni qayta ko'rib "
+"chiqing."
+
+#: templates/checkout.html:358
+msgid ""
+"Also, note that our website is working on a test mode, it means you can "
+"receive your order 3 to 30 working days. Sorry for the inconvinience."
+msgstr ""
+"Shuni ham yodda tutingki, bizning veb-saytimiz test rejimida ishlamoqda, bu "
+"sizning buyurtmangizni 3 dan 30 ish kunigacha olishingiz mumkinligini "
+"anglatadi. Noqulayliklar uchun uzr so'raymiz."
+
+#: templates/checkout.html:361
+msgid ""
+"You will pay the amount only when you get the product (by cash or card if "
+"you want). "
+msgstr ""
+"Siz summani faqat mahsulotni olganingizda to'laysiz (xohlasangiz naqd pul "
+"yoki karta orqali)"
+
+#: templates/checkout.html:366
+msgid "I agree to the terms and conditions"
+msgstr "Men ushbu shart va qoidalarga roziman"
+
+#: templates/checkout.html:370
+msgid "Proceed"
+msgstr "Buyurtma berish"
+
+#: templates/checkout.html:386
+msgid "You must agree to the terms and conditions before proceeding."
+msgstr ""
+"Siz buyurtma berishdan avval qoida va shartlarga rozi bo'lishingiz shart."
+
+#: templates/checkout.html:389
+msgid "Please select a payment method."
+msgstr "Iltimos to'lov turini tanlang."
+
+#: templates/contactus.html:12
+msgid "We’d Love to Hear From You"
+msgstr "Biz sizdan eshitishni istaymiz"
+
+#: templates/contactus.html:13
+msgid ""
+"Feel free to reach out with any questions or feedback. We are here to help!"
+msgstr ""
+"Har qanday savol yoki fikr-mulohazalar bilan bog'lanishingiz mumkin. Biz "
+"yordam berish uchun shu yerdamiz!"
+
+#: templates/contactus.html:27
+msgid "24/7 Support"
+msgstr "24/7 Qo'llab quvvatlash"
+
+#: templates/contactus.html:28
+msgid ""
+"Our team is always available to help you with any inquiries. We're just a "
+"message away!"
+msgstr ""
+"Bizning jamoamiz har qanday savollar bo'yicha sizga yordam berishga tayyor. "
+"Bizga xabar bering!"
+
+#: templates/contactus.html:34
+msgid "Fast Responses"
+msgstr "Tezkor javoblar"
+
+#: templates/contactus.html:35
+msgid ""
+"We value your time and aim to respond within hours, ensuring a smooth "
+"experience."
+msgstr ""
+"“Biz sizning vaqtingizni qadrlaymiz va bir necha soat ichida javob berishni "
+"maqsad qilib qo‘yamiz, bu esa muammosiz tajribani ta’minlaydi."
+
+#: templates/contactus.html:41
+msgid "Exclusive Updates"
+msgstr "Eksklyuziv yangilanishlar"
+
+#: templates/contactus.html:42
+msgid ""
+"Stay ahead of the curve with our exclusive offers and news, directly from "
+"our team."
+msgstr ""
+"“Bizning eksklyuziv takliflarimiz va yangiliklarimiz bilan to‘g‘ridan-"
+"to‘g‘ri jamoamizdan oldinda bo‘ling."
+
+#: templates/contactus.html:52
+msgid "Thank you!"
+msgstr "Raxmat!"
+
+#: templates/contactus.html:59
+msgid "Your Name"
+msgstr "Sizning ismingiz"
+
+#: templates/contactus.html:63
+msgid "Your Email"
+msgstr "Elektron pochta"
+
+#: templates/contactus.html:67
+msgid "Your Phone Number"
+msgstr "Telefon raqamingiz"
+
+#: templates/contactus.html:68
+msgid "Enter your phone number"
+msgstr "Telefon raqamingizni kiriting"
+
+#: templates/contactus.html:71
+msgid "Your Message"
+msgstr "Sizning habaringiz"
+
+#: templates/contactus.html:72
+msgid "Write your message here"
+msgstr "Xabaringizni yozing"
+
+#: templates/contactus.html:74
+msgid "Send Message"
+msgstr "Yuborish"
+
+#: templates/contactus.html:80
+msgid "Connect With Us"
+msgstr "Biz bilan bog'laning"
+
+#: templates/contactus.html:81
+msgid ""
+"Follow us on social media to stay updated on the latest news, promotions, "
+"and product launches"
+msgstr ""
+"So'nggi yangiliklar, reklama aktsiyalari va mahsulot taqdimotlaridan "
+"xabardor bo'lish uchun bizni ijtimoiy tarmoqlarda kuzatib boring"
+
+#: templates/contactus.html:97
+msgid "Visit Us"
+msgstr "Bizga tashrif buyuring"
+
+#: templates/contactus.html:98
+msgid ""
+"Feel free to stop by at our office anytime. We would love to meet you in "
+"person!"
+msgstr ""
+"Istalgan vaqtda bizning ofisimizga tashrif buyuring. Biz siz bilan shaxsan "
+"uchrashishdan xursandmiz!"
+
+#: templates/country_products.html:222
+msgid "Back"
+msgstr "Orqaga"
+
+#: templates/country_products.html:229
+msgid "Products of"
+msgstr "Maxsulotlar: "
+
+#: templates/country_products.html:252
+msgid "No products found in this category."
+msgstr "Bu kategoriyaga doir hech qanday maxsulot topilmadi."
+
+#: templates/favorites.html:5
+msgid "Your Favorites"
+msgstr "Sevimlilaringiz"
+
+#: templates/favorites.html:16
+msgid "Description:"
+msgstr "Batafsil:"
+
+#: templates/favorites.html:31
+msgid "Oops! Your favorites list is currently empty."
+msgstr "Voy! Sizda sevimlilar roʻyxati hozircha boʻsh."
+
+#: templates/favorites.html:32
+msgid ""
+"You haven’t added any products yet. But don’t worry, you can start exploring "
+"now!"
+msgstr ""
+"Siz hali hech qanday mahsulot qo'shmaganga o'xshaysiz. Avval maxsulotlarni "
+"ko'rib chiqing!"
+
+#: templates/favorites.html:34
+msgid "Find something you love and add it to your favorites!"
+msgstr "O'zingiz yoqtirgan narsani toping va uni sevimlilaringizga qo'shing!"
+
+#: templates/home.html:24
+msgid "Best collection"
+msgstr "Yevropa kosmetikalarning"
+
+#: templates/home.html:25
+msgid "of cosmetics"
+msgstr "Eng zo'r toplami"
+
+#: templates/home.html:26
+msgid "Order the best cosmetics from Europe from the place you want"
+msgstr "Yevropaning eng zo'r kosmetikalarini biz bilan buyurtma bering"
+
+#: templates/home.html:39
+msgid "Shop Now"
+msgstr "Xaridni boshlash"
+
+#: templates/home.html:53
+msgid "Re-open"
+msgstr ""
+
+#: templates/home.html:53
+msgid "your"
+msgstr ""
+
+#: templates/home.html:53
+msgid "beauty"
+msgstr ""
+
+#: templates/home.html:53
+msgid "with us"
+msgstr ""
+
+#: templates/home.html:81 templates/home.html:540
+msgid "New Products"
+msgstr "Yangi maxsulotlar"
+
+#: templates/home.html:113 templates/home.html:544 templates/home.html:645
+msgid "Please slide for more"
+msgstr "Iltimos, ko'prog'ini ko'rish uchun chapga suring"
+
+#: templates/home.html:286
+msgid "Hot Deals"
+msgstr "Issiq takliflar"
+
+#: templates/home.html:469
+msgid "Best Sellers"
+msgstr "Eng yaxshi sotuvchilar"
+
+#: templates/home.html:630
+msgid "Sale up to"
+msgstr "Skidkalar"
+
+#: templates/home.html:641
+msgid "On Sale"
+msgstr "Sotuvda:"
+
+#: templates/home.html:759 templates/product_detail.html:765
+msgid "Add to cart"
+msgstr "Savatga qo'shish"
+
+#: templates/order_edit.html:10
+msgid "Order Status"
+msgstr "Buyurtma xolati"
+
+#: templates/order_edit.html:12
+msgid "Pending"
+msgstr ""
+
+#: templates/order_edit.html:13
+msgid "Shipped"
+msgstr ""
+
+#: templates/order_edit.html:14
+msgid "Delivered"
+msgstr ""
+
+#: templates/order_history.html:13
+msgid "Your Order History"
+msgstr "Buyurtmalar tarixi"
+
+#: templates/order_history.html:20
+msgid "Order ID"
+msgstr "Buyurtma raqami"
+
+#: templates/order_history.html:21
+msgid "Products"
+msgstr "Maxsulotlar"
+
+#: templates/order_history.html:22
+msgid "Total Price"
+msgstr "Umumiy narx"
+
+#: templates/order_history.html:23
+msgid "Order Date"
+msgstr "Buyurtmala vaqti"
+
+#: templates/order_history.html:24
+msgid "Status"
+msgstr "Holati"
+
+#: templates/order_history.html:46
+msgid "You have no orders yet."
+msgstr "Siz hali zakas qilmadingiz."
+
+#: templates/order_history.html:53
+msgid ""
+"Please, note that if the order status is Pending, it means we received your "
+"order but its not delivered to Uzbekistan yet. If the order status is "
+"Shipped, it means it has delivered to Uzbekistan. If the status is "
+"Delivered, it means you received the product(s). If there is an issue, "
+"please don't hesitate to send us a message by clicking Send a message button"
+msgstr ""
+"E'tibor bering, agar buyurtma holati 'Pending' bo'lsa, biz sizning "
+"buyurtmangizni oldik, lekin u hali O'zbekistonga yetkazilmaganligini "
+"anglatadi. Buyurtma holati 'Shipped' bo'lsa, bu O'zbekistonga yetkazib "
+"berilganligini bildiradi. Agar holat 'Delivered' bo'lsa, bu siz "
+"mahsulotni(lar)ni olganingizni bildiradi. Agar muammo yuzaga kelsa, iltimos, "
+"'Xabar yuborish' tugmasini bosish orqali bizga xabar yuborishdan tortinmang"
+
+#: templates/order_history.html:56
+msgid "Send a message"
+msgstr "Xabar yuborish"
+
+#: templates/product_detail.html:767
+msgid "Add to favorites"
+msgstr "Sevimlilarga qo'shish"
+
+#: templates/product_detail.html:775
+msgid "Success!"
+msgstr "Muvaffaqiyatli"
+
+#: templates/product_detail.html:784
+msgid "Customer Reviews"
+msgstr "Mijozlardan izohlar"
+
+#: templates/product_detail.html:798
+msgid "Average Rating"
+msgstr "O'rtacha reyting"
+
+#: templates/product_detail.html:829
+msgid "Posted on"
+msgstr "Izoh qoldirilgan sana"
+
+#: templates/product_detail.html:833
+msgid "No reviews yet. Be the first to leave one!"
+msgstr "Hozircha izohlar yo‘q. Birinchi bo'lib fikr bildiring!"
+
+#: templates/product_detail.html:840
+msgid "Leave a Review"
+msgstr "Izoh qoldiring"
+
+#: templates/product_detail.html:844
+msgid "Your Rating"
+msgstr "Sizning balingiz"
+
+#: templates/product_detail.html:854
+msgid "Your Review"
+msgstr "Sizning izohingiz"
+
+#: templates/product_detail.html:860
+msgid "Write your review here..."
+msgstr "Xabaringizni yozing..."
+
+#: templates/product_detail.html:864
+msgid "Submit Review"
+msgstr "Izoh qoldirish"
+
+#: templates/product_detail.html:870
+msgid "You may also like"
+msgstr "Sizga yoqishi mumkin"
+
+#: templates/product_detail.html:880 templates/search_results.html:104
+msgid "Details"
+msgstr "Ma'lumotlar"
+
+#: templates/registration/login.html:12
+msgid "Welcome Back!"
+msgstr "Xush kelibsiz"
+
+#: templates/registration/login.html:21
+msgid "Please login to your account to continue."
+msgstr "Iltimos davom etish uchun akkountingizga kiring"
+
+#: templates/registration/login.html:32
+msgid "Forgot Password?"
+msgstr "Parolni esdan chiqdimi?"
+
+#: templates/registration/password_change_done.html:8
+msgid "Password Successfully Changed"
+msgstr "Parol Muvaffaqiyatli o'zgartirildi"
+
+#: templates/registration/password_change_done.html:9
+msgid "You can now log in using your new password."
+msgstr "Siz endi yangi parol bilan kirishingiz mumkin"
+
+#: templates/registration/password_change_done.html:12
+#: templates/registration/password_reset_done.html:14
+msgid "Go to Login Page"
+msgstr "Akkountga kirish"
+
+#: templates/registration/password_change_form.html:9
+msgid "Change Your Password"
+msgstr "Parolni o'zgartirish"
+
+#: templates/registration/password_change_form.html:10
+msgid "Please enter your old password and your new password twice to confirm."
+msgstr ""
+"Iltimos, avval eski parolni kiriting va keyin, yangi parolni 2 marta kiriting"
+
+#: templates/registration/password_reset_complete.html:7
+msgid "Password Changed"
+msgstr "Parol o'zgartirildi"
+
+#: templates/registration/password_reset_complete.html:9
+msgid ""
+"Your password has been successfully updated. You can now log in using your "
+"new password."
+msgstr "Parol o'zgartirildi. Siz endi yangi parol bilan kirishingiz mumkin"
+
+#: templates/registration/password_reset_complete.html:11
+msgid "Go to Log In Page"
+msgstr "Akkountga kirish"
+
+#: templates/registration/password_reset_confirm.html:10
+msgid "Enter New Password"
+msgstr "Yangi parolingizni kiriting"
+
+#: templates/registration/password_reset_confirm.html:11
+msgid "Please enter your new password below to update your credentials."
+msgstr "Iltmos yangi parolingizni kiriting"
+
+#: templates/registration/password_reset_done.html:9
+msgid "Please Check Your Email"
+msgstr "Iltimos Email ni tekshiring"
+
+#: templates/registration/password_reset_done.html:11
+msgid "Information about your password change has been sent to your email!"
+msgstr "Parol o'zgartirish haqidagi malumotlar sizga email orqali yuborildi"
+
+#: templates/registration/password_reset_done.html:12
+msgid "Make sure to check your inbox (and spam folder if needed)."
+msgstr "Iltimos email ni tekshiring"
+
+#: templates/registration/password_reset_form.html:9
+msgid "Forgot Your Password?"
+msgstr "Parolni unuttingizmi?"
+
+#: templates/registration/password_reset_form.html:11
+msgid ""
+"Enter your email below to reset your password. We’ll send you a link to "
+"create a new one."
+msgstr "Parolni tiklash uchun pochtangizni kiriting"
+
+#: templates/registration/signup.html:11
+msgid "Create an Account"
+msgstr "Ro'yxattan o'tish"
+
+#: templates/registration/signup.html:12
+msgid "Fill in the details below to sign up and get started."
+msgstr "Iltimos, ro'yxattan o'tish uchun quyidagi ma'lumotlarni to'ldiring"
+
+#: templates/registration/signup.html:17
+msgid "Sign Up"
+msgstr "Ro'yxattan o'tish"
+
+#: templates/registration/signup.html:20
+msgid "Already have an account?"
+msgstr "Akkountingiz bormi?"
+
+#: templates/search_results.html:4 templates/search_results.html:81
+msgid "Search Results for"
+msgstr "Qidiruv natijalari: "
+
+#: templates/search_results.html:105
+msgid "Add to Cart"
+msgstr "Savatga qo'shish"
+
+#: templates/search_results.html:113
+msgid "No products found. Try searching for something else."
+msgstr "Bunday maxsulot topilmadi. Iltimos boshqa narsani qidirib ko'ring"
+
+#, fuzzy
+#~| msgid "Categories"
+#~ msgid "Category"
+#~ msgstr "Kategoriyalar"
+
+#, fuzzy
+#~| msgid "Categories"
+#~ msgid "Category Name"
+#~ msgstr "Kategoriyalar"
+
+#~ msgid "Apply Filter"
+#~ msgstr "Filterni qo'llash"
+
+#~ msgid "Clear Filter"
+#~ msgstr "Filterni tozalash"
+
+#~ msgid "Accepted Cards"
+#~ msgstr "Kartalar"
+
+#~ msgid "Name on Card"
+#~ msgstr "Kartadagi ism"
+
+#~ msgid "Credit card number"
+#~ msgstr "Karta raqami"
+
+#, fuzzy
+#~| msgid "Exp Month"
+#~ msgid "Exp month"
+#~ msgstr "Oy"
+
+#, fuzzy
+#~| msgid "Exp Year"
+#~ msgid "Exp year"
+#~ msgstr "Yil"
+
+#~ msgid "Continue to checkout"
+#~ msgstr "Sotib olish"
+
+#~ msgid "Cart"
+#~ msgstr "Savat"
+
+#~ msgid "Total"
+#~ msgstr "Jami"
+
+#~ msgid "Cosmetics"
+#~ msgstr "Kosmetika"
+
+#~ msgid "State"
+#~ msgstr "Shtat"
+
+#~ msgid "Zip"
+#~ msgstr "Pochta kodi"
+
+#~ msgid "Add to saved"
+#~ msgstr "Sevimlilarga qo'shildi"
+
+#~ msgid "City"
+#~ msgstr "Shaxar"
+
+#~ msgid "Prices Drop"
+#~ msgstr "Narxlar"
+
+#~ msgid "Best Sales"
+#~ msgstr "Eng yaxshi sotuvlar"
+
+#~ msgid "New Product"
+#~ msgstr "Yangi Maxsulotlar"
+
+#~ msgid "Perfumes"
+#~ msgstr "Perfyumeriya"
+
+#~ msgid "Clothes"
+#~ msgstr "Kiyimlar"
+
+#~ msgid "Social Media"
+#~ msgstr "Ijtimoiy tarmoq"

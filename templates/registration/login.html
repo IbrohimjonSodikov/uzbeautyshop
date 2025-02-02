@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+<body class="bg-light">
+    {% block content %}
+    {% load i18n %}
+    <div class="container d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        
+        <div class="card shadow-lg p-4 rounded mt-5 mb-5" style="max-width: 400px; width: 100%; border-radius: 16px;">
+            <div class="card-body">
+                <h3 class="text-center mb-4 text-primary font-weight-bold">{% trans "Welcome Back!"%}</h3>
+                {% if messages %}
+    <div class="alert alert-success">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+                <p class="text-center text-muted mb-4">{% trans "Please login to your account to continue."%}</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.as_p }}
+                    </div>
+                    <button class="btn btn-primary btn-block mb-3" type="submit" style="border-radius: 10px;">
+                        <i class="fas fa-sign-in-alt"></i> {% trans "Login"%}
+                    </button>
+                    <div class="text-center">
+                        <a class="btn btn-link text-secondary" href="{% url 'password_reset' %}" role="button">
+                            <i class="fas fa-key"></i> {% trans "Forgot Password?"%}
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>

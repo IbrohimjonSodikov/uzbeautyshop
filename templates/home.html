@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UzBeautyShop</title>
+</head>
+<body>
+    
+    {% extends 'base.html' %}
+    {% block content %}
+    {% load i18n %}
+    <body>    
+
+        <!-- slider section starts  -->
+        <section class="slider_section slider_section2 mb-66">
+            <div class="slider_area owl-carousel">
+                <div class="single_slider d-flex align-items-center" data-bgimg="/static/images/cover1.jpeg">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6 offset-lg-6 col-md-6 offset-md-6">
+                                <div class="slider_content slider_content2 content_right">
+                                    <i class="fa fa-arrow-right" style="margin-left: 5px;"></i>
+                                    <h1 style="color: #000;">{% trans "Best collection"%}</h1>
+                                    <h2 style="color: #000;">{% trans "of cosmetics"%}</h2>
+                                    <p style="color: #000;">{% trans "Order the best cosmetics from Europe from the place you want"%}</p>
+                                    <a href="{% url 'all' %}" class="button" 
+   style="
+       color: #000; 
+       background-color: rgba(255, 255, 255, 0.2); 
+       border: solid 1px rgba(255, 255, 255, 0.6); 
+       border-radius: 60px; 
+       text-align: center; 
+       padding: 10px 20px; 
+       text-decoration: none; 
+       display: inline-block; 
+       line-height: 1.5; 
+   ">
+   {% trans "Shop Now" %}<i class="fa fa-arrow-right" style="margin-left: 5px;"></i>
+</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="single_slider d-flex align-items-center" data-bgimg="/static/images/cover2.jpg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-7">
+                                <div class="slider_content slider_content2 content_left">
+                                    <h1 style="color: #000; font-size: 25px; letter-spacing: 3px;">{% trans "Re-open"%} <br><br> {% trans "your"%} <br><br> {% trans "beauty"%} <br><br> {% trans "with us"%}</h1>
+</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+        {% if messages %}
+        <div class="container mt-4">
+            {% for message in messages %}
+                <div class="alert alert-success" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+        <!-- product area starts -->
+    
+        <div class="product_area product_area_two mb-65">
+            <div class="container">
+                <!-- Tab Navigation -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section_title">
+                            <h2>{% trans "New Products" %}</h2>
+                            <div class="product_tab_btn">
+                                <ul class="nav" role="tablist">
+                                    <li>
+                                        <a href="#Germany" class="active" data-toggle="tab" role="tab" aria-controls="Germany"
+                                            aria-selected="true">
+                                            {% trans "Germany" %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#France" data-toggle="tab" role="tab" aria-controls="France"
+                                            aria-selected="false">
+                                            {% trans "France" %}
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#Italy" data-toggle="tab" role="tab" aria-controls="Italy"
+                                            aria-selected="false">
+                                            {% trans "Italy" %}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Germany Section -->
+                    <div class="slider_arrow">
+                        <i class="fa fa-arrow-right" style="font-size: 30px; color: #000;"></i>
+                        <p style="display: inline;">{% trans "Please slide for more"%}</p>
+                    </div>
+                    <div class="tab-pane fade show active" id="Germany" role="tabpanel">
+                        <div class="row">
+                            <div class="product_carousel product_column4 owl-carousel">
+                                {% for product in german_products %}
+                                <div class="col-lg-3 col-6">
+                                    <article class="single_product">
+                                        <figure>
+                                            <div class="product_thumb" style="height: 300px; display: flex; justify-content: center; align-items: center;">
+                                                <a href="{% url 'product_detail' product.pk %}" class="primary_img">
+                                                    {% if product.image1 %}
+                                                    <img src="{{ product.image1.url }}" alt="{{ product.name }}" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                    {% endif %}
+                                                </a>
+                                                <a href="{% url 'product_detail' product.pk %}" class="secondary_img">
+                                                    {% if product.image2 %}
+                                                    <img src="{{ product.image1.url }}" alt="{{ product.name }}" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                    {% endif %}
+                                                </a>
+                                            </div>
+                                            <figcaption class="product_content">
+                                                <h4 class="product_name">
+                                                    <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                                                </h4>
+                                                <div class="price_box">
+                                                    <span class="old_price">{{ product.original_price }} sum</span>
+                                                    <span class="current_price">{{ product.price }} sum</span>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                {% endfor %}
+                                
+                            </div>
+                        </div>
+                            <a href="{% url 'country_products' "Germany" %}" style="
+                                font-size: 18px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                padding: 15px 30px;
+                                border-radius: 50px;
+                                background-color: #fff;
+                                color: #000;
+                                border: none;
+                                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                                transition: all 0.3s ease;
+                            ">
+                                {% trans "All German products"%}
+                    </a>
+                    </div>
+                    <!-- France Section -->
+                    <div class="tab-pane fade" id="France" role="tabpanel">
+                        <div class="row">
+                            <div class="product_carousel product_column4 owl-carousel">
+                                {% for product in french_products %}
+                                <div class="col-lg-3 col-6">
+                                    <article class="single_product">
+                                        <figure>
+                                            <div class="product_thumb" style="height: 300px; display: flex; justify-content: center; align-items: center;">
+                                                <a href="{% url 'product_detail' product.pk %}" class="primary_img">
+                                                    {% if product.image1 %}
+                                                    <img src="{{ product.image1.url }}" alt="{{ product.name }}" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                    {% endif %}
+                                                </a>
+                                                <a href="{% url 'product_detail' product.pk %}" class="secondary_img">
+                                                    {% if product.image2 %}
+                                                    <img src="{{ product.image1.url }}" alt="{{ product.name }}" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                    {% endif %}
+                                                </a>
+                                            </div>
+                                            <figcaption class="product_content">
+                                                <h4 class="product_name">
+                                                    <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                                                </h4>
+                                                <div class="price_box">
+                                                    <span class="old_price">{{ product.original_price }} sum</span>
+                                                    <span class="current_price">{{ product.price }} sum</span>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <a href="{% url 'country_products' "France" %}" style="
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 15px 30px;
+                        border-radius: 50px;
+                        background-color: #fff;
+                        color: #000;
+                        border: none;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                        transition: all 0.3s ease;
+                    ">
+                        {% trans "All French products"%}
+            </a>
+                    </div>
+                    
+                    <!-- Italy Section -->
+                    <div class="tab-pane fade" id="Italy" role="tabpanel">
+                        <div class="row">
+                            <div class="product_carousel product_column4 owl-carousel">
+                                {% for product in italian_products %}
+                                <div class="col-lg-3 col-6">
+                                    <article class="single_product">
+                                        <figure>
+                                            <div class="product_thumb" style="height: 300px; display: flex; justify-content: center; align-items: center;">
+                                                <a href="{% url 'product_detail' product.pk %}" class="primary_img">
+                                                    {% if product.image1 %}
+                                                    <img src="{{ product.image1.url }}" alt="{{ product.name }}" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                    {% endif %}
+                                                </a>
+                                                <a href="{% url 'product_detail' product.pk %}" class="secondary_img">
+                                                    {% if product.image2 %}
+                                                    <img src="{{ product.image1.url }}" alt="{{ product.name }}" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                    {% endif %}
+                                                </a>
+                                            </div>
+                                            <figcaption class="product_content">
+                                                <h4 class="product_name">
+                                                    <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                                                </h4>
+                                                <div class="price_box">
+                                                    <span class="old_price">{{ product.original_price }} sum</span>
+                                                    <span class="current_price">{{ product.price }} sum</span>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <a href="{% url 'country_products' "Italy" %}" style="
+                        font-size: 18px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 15px 30px;
+                        border-radius: 50px;
+                        background-color: #fff;
+                        color: #000;
+                        border: none;
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                        transition: all 0.3s ease;
+                    ">
+                        {% trans "All Italian products"%}
+            </a>
+                    </div>
+</div>
+</div>
+</div>                   
+        
+        <!-- product area ends -->
+    
+        <!-- home section area starts  -->
+    
+        <div class="home_section_two color_two mb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <div class="home_section_left">
+                            <!-- deals product area starts -->
+    
+                            <div class="deals_product_area mb-68">
+                                <div class="section_title section_title_style2">
+                                    <h2>{% trans "Hot Deals"%}</h2>
+                                </div>
+                                <div class="row">
+                                    <div class="deals_carousel product_column1 owl-carousel">
+                                        <div class="col-lg-3">
+                                            <article class="single_product">
+                                                <figure>
+                                                    <div class="product_thumb">
+                                                        
+                                                        <a href="{% url 'product_detail' is_hot_deal1.pk %}" class="primary_img">
+                                                            {% if is_hot_deal1 and is_hot_deal1.image1 %}
+                                                            <img src="{{ is_hot_deal1.image1.url }}" alt="">
+                                                       {% endif %} </a>
+                                                        
+                                                        <a href="{% url 'product_detail' is_hot_deal1.pk %}" class="secondary_img">
+                                                            {% if is_hot_deal1 and is_hot_deal1.image2 %}
+                                                            <img src="{{ is_hot_deal1.image1.url }}" alt="">
+                                                            {% endif %}
+                                                        </a>
+                                                        
+                                                        <div class="action_links">
+                                                            <ul>
+                                                                <li class="add_to_cart">
+                                                                    <a href="{% url 'add_to_cart' is_hot_deal1.pk %}" title="Add to Cart">
+                                                                        <i class="fa fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="wishlist">
+                                                                    <a href="{% url 'add_to_favorites' is_hot_deal1.pk %}" title="Add to Wishlist">
+                                                                        <i class="fa fa-heart-o"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="quick_button">
+                                                                    <a href="#" data-toggle="modal" data-target="#modal_box"
+                                                                        title="Quick View">
+                                                                        <i class="fa fa-eye"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <figcaption class="product_content">
+                                                        <!-- for deals timing -->
+                                                        <div class="product_timing">
+                                                            <div data-countdown="2025/2/28"></div>
+                                                        </div>
+                                                        <h4 class="product_name">
+                                                            <a href="{% url 'product_detail' is_hot_deal1.pk %}">{{ is_hot_deal1.name }}</a>
+                                                        </h4>
+    
+                                                        <div class="price_box">
+                                                            <span class="old_price">{{ is_hot_deal1.original_price }} sum</span>
+                                                            <span class="current_price">{{ is_hot_deal1.price }} sum</span>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </article>
+                                        </div>
+    
+                                        <div class="col-lg-3">
+                                            <article class="single_product">
+                                                <figure>
+                                                    <div class="product_thumb">
+                                                        
+                                                        <a href="{% url 'product_detail' is_hot_deal2.pk %}" class="primary_img">
+                                                            {% if is_hot_deal2 and is_hot_deal2.image1 %}
+                                                            <img src="{{ is_hot_deal2.image1.url }}" alt="">
+                                                       {% endif %} </a>
+                                                        
+                                                        <a href="{% url 'product_detail' is_hot_deal2.pk %}" class="secondary_img">
+                                                            {% if is_hot_deal2 and is_hot_deal2.image2 %}
+                                                            <img src="{{ is_hot_deal2.image1.url }}" alt="">
+                                                            {% endif %}
+                                                        </a>
+                                                        
+                                                        <div class="action_links">
+                                                            <ul>
+                                                                <li class="add_to_cart">
+                                                                    <a href="{% url 'add_to_cart' is_hot_deal2.pk %}" title="Add to Cart">
+                                                                        <i class="fa fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="wishlist">
+                                                                    <a href="{% url 'add_to_favorites' is_hot_deal2.pk %}" title="Add to Wishlist">
+                                                                        <i class="fa fa-heart-o"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="quick_button">
+                                                                    <a href="#" data-toggle="modal" data-target="#modal_box"
+                                                                        title="Quick View">
+                                                                        <i class="fa fa-eye"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <figcaption class="product_content">
+                                                        <!-- for deals timing -->
+                                                        <div class="product_timing">
+                                                            <div data-countdown="2025/2/28"></div>
+                                                        </div>
+                                                        <h4 class="product_name">
+                                                            <a href="{% url 'product_detail' is_hot_deal2.pk %}">{{ is_hot_deal2.name }}</a>
+                                                        </h4>
+    
+                                                        <div class="price_box">
+                                                            <span class="old_price">{{ is_hot_deal2.original_price }} sum</span>
+                                                            <span class="current_price">{{ is_hot_deal2.price }} sum</span>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </article>
+                                        </div>
+    
+                                        <div class="col-lg-3">
+                                            <article class="single_product">
+                                                <figure>
+                                                    <div class="product_thumb">
+                                                        
+                                                        <a href="{% url 'product_detail' is_hot_deal3.pk %}" class="primary_img">
+                                                            {% if is_hot_deal3 and is_hot_deal3.image1 %}
+                                                            <img src="{{ is_hot_deal3.image1.url }}" alt="">
+                                                       {% endif %} </a>
+                                                        
+                                                        <a href="{% url 'product_detail' is_hot_deal3.pk %}" class="secondary_img">
+                                                            {% if is_hot_deal3 and is_hot_deal3.image2 %}
+                                                            <img src="{{ is_hot_deal3.image1.url }}" alt="">
+                                                            {% endif %}
+                                                        </a>
+                                                        
+                                                        <div class="action_links">
+                                                            <ul>
+                                                                <li class="add_to_cart">
+                                                                    <a href="{% url 'add_to_cart' is_hot_deal3.pk %}" title="Add to Cart">
+                                                                        <i class="fa fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="wishlist">
+                                                                    <a href="{% url 'add_to_favorites' is_hot_deal3.pk %}" title="Add to Wishlist">
+                                                                        <i class="fa fa-heart-o"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="compare">
+                                                                    <a href="#" title="Add to Compare">
+                                                                        <i class="fa fa-random"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="quick_button">
+                                                                    <a href="#" data-toggle="modal" data-target="#modal_box"
+                                                                        title="Quick View">
+                                                                        <i class="fa fa-eye"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <figcaption class="product_content">
+                                                        <!-- for deals timing -->
+                                                        <div class="product_timing">
+                                                            <div data-countdown="2025/2/28"></div>
+                                                        </div>
+                                                        <h4 class="product_name">
+                                                            <a href="{% url 'product_detail' is_hot_deal3.pk %}">{{ is_hot_deal3.name }} sum</a>
+                                                        </h4>
+    
+                                                        <div class="price_box">
+                                                            <span class="old_price">{{ is_hot_deal3.original_price }} sum</span>
+                                                            <span class="current_price">{{ is_hot_deal3.price }} sum</span>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- deals product area ends -->
+    
+                            <!-- small product area starts -->
+    
+                            <div class="small_product_area mb-68">
+                                <div class="section_title section_title_style2">
+                                    <h2>{% trans "Best Sellers"%}</h2>
+                                </div>
+                                <div class="small_product_container sidebar_product_column1 owl-carousel">
+                                    <!-- First Slider with 4 random products -->
+                                    <div class="small_product_list">
+                                        {% for product in random_products_1 %}
+                                        <article class="single_product">
+                                            <figure>
+                                                <div class="product_thumb">
+                                                    <a href="{% url 'product_detail' product.id %}" class="primary_img">
+                                                        <img src="{{ product.image1.url }}" alt="{{ product.name }}">
+                                                    </a>
+                                                    <a href="#" class="secondary_img">
+                                                        <img src="{{ product.image1.url }}" alt="{{ product.name }}">
+                                                    </a>
+                                                </div>
+                                                <figcaption class="product_content">
+                                                    <h4 class="product_name">
+                                                        <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+                                                    </h4>
+                                                    <div class="price_box">
+                                                        <span class="old_price">{{ product.original_price }} sum</span>
+                                                        <span class="current_price">{{ product.price }} sum</span>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+                                        </article>
+                                        {% endfor %}
+                                    </div>
+                            
+                                    <!-- Second Slider with 4 random products -->
+                                    <div class="small_product_list">
+                                        {% for product in random_products_2 %}
+                                        <article class="single_product">
+                                            <figure>
+                                                <div class="product_thumb">
+                                                    <a href="{% url 'product_detail' product.id %}" class="primary_img">
+                                                        <img src="{{ product.image1.url }}" alt="{{ product.name }}">
+                                                    </a>
+                                                    <a href="#" class="secondary_img">
+                                                        <img src="{{ product.image1.url }}" alt="{{ product.name }}">
+                                                    </a>
+                                                </div>
+                                                <figcaption class="product_content">
+                                                    <h4 class="product_name">
+                                                        <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+                                                    </h4>
+                                                    <div class="price_box">
+                                                        <span class="old_price">{{ product.original_price }} sum</span>
+                                                        <span class="current_price">{{ product.price }} sum</span>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+                                        </article>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- small product area ends -->
+    
+                            <!-- testimonial section starts  -->
+    
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-12">
+                        <div class="home_section_right">
+                            <!-- product area starts  -->
+                             
+                            <div class="product_area mb-65">
+                                <div class="section_title section_title_style2">
+                                    <h2>{% trans "New Products"%}</h2>
+                                </div>
+                                <div class="slider_arrow">
+                                    <i class="fa fa-arrow-right" style="font-size: 30px; color: #000;"></i>
+                                    <p style="display: inline;">{% trans "Please slide for more"%}</p>
+                                </div>
+                                <div class="row">
+                                    <div class="product_carousel product_column3 owl-carousel">
+                                        {% for product in object_list %}
+                                        <div class="col-lg-3">
+                                            <article class="single_product">
+                                                <figure>
+                                                    <div class="product_thumb" style="height: 300px; display: flex; justify-content: center; align-items: center;">
+                                                        <a href="{% url 'product_detail' product.pk %}" class="primary_img">
+                                                            {% if product.image1 %}
+                                                            <img src="{{ product.image1.url }}" alt="" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                            {% endif %}
+                                                        </a>
+                                                        <a href="{% url 'product_detail' product.pk %}" class="secondary_img">
+                                                            {% if product.image2 %}
+                                                            <img src="{{ product.image1.url }}" alt="" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                            {% endif %}
+                                                        </a>
+                    
+                                                        <div class="action_links">
+                                                            <ul>
+                                                                <li class="add_to_cart">
+                                                                    <a href="{% url 'add_to_cart' product.pk %}" title="Add to Cart">
+                                                                        <i class="fa fa-shopping-cart"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="wishlist">
+                                                                    <a href="{% url 'add_to_favorites' product.pk %}" title="Add to Wishlist">
+                                                                        <i class="fa fa-heart-o"></i>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="quick_button">
+                                                                    <a href="#" data-toggle="modal" data-target="#modal_box"
+                                                                        title="Quick View">
+                                                                        <i class="fa fa-eye"></i>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <figcaption class="product_content">
+                                                        <h4 class="product_name">
+                                                            <a href="#">{{ product.name }}</a>
+                                                        </h4>
+                                                        <div class="price_box">
+                                                            <span class="old_price">{{ product.original_price }} sum</span>
+                                                            <span class="current_price">{{ product.price }} sum</span>
+                                                        </div>
+                                                    </figcaption>
+                                                </figure>
+                                            </article>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product area ends -->
+                            <div class="back">
+                                <hr>
+                                <a href="{% url 'all' %}" class="product-btn" 
+                                style="
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background: #fff;
+                                color: #4e4376;
+                                padding: 10px 20px;
+                                border-radius: 50px;
+                                font-size: 0.9rem;
+                                font-weight: 600;
+                                text-transform: uppercase;
+                                text-decoration: none;
+                                transition: background 0.3s ease;
+                                "
+                                >{% trans "All products"%}</a><hr>
+                            </div>
+                            <!-- Long banner area starts  -->
+                            <div class="banner_area banner_style_two mb-58">
+                                <div class="single_banner">
+                                    <div class="banner_thumb">
+                                        <a href="#">
+                                            <img src="/static/images/skidka.jpg" alt="" style="width: 100%; height: 100%;">
+    
+                                        </a>
+                                        <div class="banner_content">
+                                            <h3 style="color: tomato;">{% trans "Sale up to"%} </h3>
+                                            <h2>60%</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Long Banner area ends -->
+    
+                            <!-- product section starts  -->
+                            <div class="product_area">
+                                <div class="section_title section_title_style2">
+                                    <h2>{% trans "On Sale"%}</h2>
+                                </div>
+                                <div class="slider_arrow">
+                                    <i class="fa fa-arrow-right" style="font-size: 30px; color: #000;"></i>
+                                    <p style="display: inline;">{% trans "Please slide for more"%}</p>
+                                </div>
+                                <div class="product_carousel owl-carousel product_column3">
+                                    {% for product in on_sale_products %}
+                                    <div class="item">
+                                        <div class="col-lg-3">
+                                            <div class="product_items">
+                                                <article class="single_product">
+                                                    <figure>
+                                                        <div class="product_thumb" style="height: 300px; display: flex; justify-content: center; align-items: center;">
+                                                            <a href="{% url 'product_detail' product.pk %}" class="primary_img">
+                                                                <img src="{{ product.image1.url }}" alt="" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                            </a>
+                                                            <a href="{% url 'product_detail' product.pk %}" class="secondary_img">
+                                                                <img src="{{ product.image1.url }}" alt="" style="max-height: 200px; width: auto; object-fit: cover;">
+                                                            </a>
+                            
+                                                            <div class="action_links">
+                                                                <ul>
+                                                                    <li class="add_to_cart">
+                                                                        <a href="{% url 'add_to_cart' product.pk %}" title="Add to Cart">
+                                                                            <i class="fa fa-shopping-cart"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="wishlist">
+                                                                        <a href="{% url 'add_to_favorites' product.pk %}" title="Add to Wishlist">
+                                                                            <i class="fa fa-heart-o"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="quick_button">
+                                                                        <a href="#" data-toggle="modal" data-target="#modal_box" title="Quick View">
+                                                                            <i class="fa fa-eye"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <figcaption class="product_content">
+                                                            <h4 class="product_name">
+                                                                <a href="#">{{ product.name }}</a>
+                                                            </h4>
+                                                            <div class="price_box">
+                                                                <span class="old_price">{{ product.original_price }} sum</span>
+                                                                <span class="current_price">{{ product.price }} sum</span>
+                                                            </div>
+                                                        </figcaption>
+                                                    </figure>
+                                                </article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            
+                            <!-- product section ends -->
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+        <!-- home section area ends -->
+ 
+        <!-- modal section starts  -->
+    
+    
+        <div class="modal fade" id="modal_box" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" data-dismiss="modal" aria-label="close" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal_body">
+                        <div class="container">
+                            <div class="row">
+                                {% for product in object_list %}
+                                <div class="col-lg-5 col-md-5 col-sm-12">
+                                    <div class="modal_tab">
+                                        <div class="tab-content product-details-large">
+                                            <div class="tab-pane fade show active" id="tab1" role="tabpanel">
+                                                <div class="modal_tab_img">
+                                                    <a href="#"><img src="{{product.image1.url}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="tab2" role="tabpanel">
+                                                <div class="modal_tab_img">
+                                                    <a href="#"><img src="{{product.image1.url}}" alt=""></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal_tab_button">
+                                            <ul class="nav product_navactive owl-carousel" role="tablist">
+                                             
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-sm-12">
+                                    <div class="modal_right">
+                                        <div class="modal_title mb-10">
+                                            <h2>{{ product.name }}</h2>
+                                        </div>
+                                        <div class="modal_price mb-10">
+                                            <span class="new_price">{{product.original_price}} sum</span>
+                                            <span class="old_price">{{product.price}} sum</span>
+                                        </div>
+                                        <div class="modal_description mb-15">
+                                            <p>{{product.description}}</p>
+                                        </div>
+                                        <div class="variants_selects">
+                    
+                                            <div class="modal_add_to_cart">
+                                                <form action="#">
+                                                    <input type="number" min="1" max="100" step="1" value="1">
+                                                    <button type="submit"><a href="{% url 'add_to_cart' product.id %}" style="color: #fff;">{% trans "Add to cart"%}</a></button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    </body>
+    </html>
+    {% endblock content %}
+</body>
+</html>

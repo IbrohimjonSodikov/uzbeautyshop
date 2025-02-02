@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+    {% block title %}<title>{% trans "Search Results for" %} {{ query }}</title>{% endblock title %}
+
+    <style>
+        .card {
+            margin: 20px 0;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .card img {
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #ddd;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #666;
+        }
+        .btn-details, .btn-cart {
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-details {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .btn-details:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+        .btn-cart {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+        }
+        .btn-cart:hover {
+            background-color: #ff6e4a;
+            transform: translateY(-3px);
+        }
+        .card-footer {
+            text-align: center;
+        }
+        .no-results {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #999;
+            text-align: center;
+            padding: 50px 0;
+        }
+        /* Flexbox for the container */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+    </style>
+
+    <div class="container my-5">
+        <h1 class="text-center mb-4">{% trans "Search Results for" %} "{{ query }}"</h1>
+
+        {% if results %}
+            <div class="product-container">
+                {% for product in results %}
+                    <div class="col-md-4">
+                        <a href="{% url 'product_detail' product.id %}">
+                        <div class="card">
+                            <img src="{{ product.image1.url }}" class="card-img-top" alt="{{ product.name }}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">
+                                    {% if user_language == 'ru' %}
+                        {{ product.productdescription_ru |truncatechars:100 }}
+                    {% elif user_language == 'uz' %}
+                        {{ product.productdescription_uz |truncatechars:100 }}
+                    {% else %}
+                        {{ product.description |truncatechars:100 }}
+                    {% endif %}
+                                </p>
+                                <p class="card-text"><strong>{% trans "Price:"%}</strong>{{ product.price }} sum</p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="{% url 'product_detail' product.id %}" class="btn btn-details">{% trans "Details"%}</a>
+                                <a href="{% url 'add_to_cart' product.id %}" class="btn btn-cart">{% trans "Add to Cart" %}</a>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="no-results">{% trans "No products found. Try searching for something else."%}</p>
+        {% endif %}
+    </div>
+{% endblock content %}

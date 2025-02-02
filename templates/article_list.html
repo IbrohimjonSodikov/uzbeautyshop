@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog{% endblock title %}
+
+{% block content %}
+{% load i18n %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">{% trans "Our Blog" %}</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for article in object_list %}
+        <div class="col">
+            <a href="{% url 'article_detail' article.pk %}">
+                <div class="card h-100 shadow-lg" style="border-radius: 15px; overflow: hidden; transition: transform 0.3s;">
+                    {% if article.photo %}
+                    <img src="{{ article.photo.url }}" class="card-img-top" alt="{{ article.title }}" style="height: 200px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'article_detail' article.pk %}" class="text-decoration-none text-dark">{{ article.title }}</a>
+                        </h5>
+                        <p class="card-text text-muted">{{ article.summary }}... 
+                            <a href="{% url 'article_detail' article.pk %}" class="text-primary">{% trans "Read more" %}</a>
+                        </p>
+                    </div>
+                </a>
+                <div class="card-footer text-muted">
+                    <small>{{ article.date }}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    /* Responsive hover effect */
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Styling for smooth animations */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Adjust card spacing for mobile view */
+    @media (max-width: 576px) {
+        .card-img-top {
+            height: 150px; /* Adjust image height for small devices */
+        }
+    }
+</style>
+{% endblock content %}

@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+{% load i18n %}
+    <div class="container mt-5 pt-5">
+        <!-- Hero Section with Parallax Effect and Gradient Background -->
+        <div class="hero-section text-center text-white" style="background: url('https://www.kazima.in/wp-content/uploads/2024/03/cosmetics.jpg') no-repeat center center; background-size: cover; height: 80vh; display: flex; justify-content: center; align-items: center; position: relative;">
+            <div class="overlay d-flex justify-content-center align-items-center" style="height: 100%; width: 100%; position: absolute;">
+                <div class="content" style="text-align: center; z-index: 1; max-width: 800px;">
+                    <h1 class="display-4 font-weight-bold mb-4 animate__animated animate__fadeIn animate__delay-1s" style="font-family: 'Arial', sans-serif; font-size: 4rem; line-height: 1.2; letter-spacing: 2px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);">{% trans "We’d Love to Hear From You"%}</h1>
+                    <p class="lead animate__animated animate__fadeIn animate__delay-2s" style="font-size: 1.5rem; font-family: 'Georgia', serif; letter-spacing: 1px; text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);">{% trans "Feel free to reach out with any questions or feedback. We are here to help!"%}</p>
+                    <a href="#contact" class="btn btn-primary btn-lg mt-4 animate__animated animate__fadeIn animate__delay-3s" style="padding: 12px 30px; font-size: 1.1rem; border-radius: 30px; background: #ff7f50; border: none; box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); transition: background-color 0.3s, transform 0.3s;">{% trans "Contact Us"%}</a>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        <!-- Why Contact Us Section with Animations -->
+        <div class="container my-5">
+            <div class="row text-center">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="icon-box p-4 shadow-lg rounded">
+                        <i class="fas fa-headset fa-3x mb-3 text-primary"></i>
+                        <h4 class="font-weight-bold">{% trans "24/7 Support"%}</h4>
+                        <p>{% trans "Our team is always available to help you with any inquiries. We're just a message away!"%}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="icon-box p-4 shadow-lg rounded">
+                        <i class="fas fa-rocket fa-3x mb-3 text-primary"></i>
+                        <h4 class="font-weight-bold">{% trans "Fast Responses"%}</h4>
+                        <p>{% trans "We value your time and aim to respond within hours, ensuring a smooth experience."%}</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="icon-box p-4 shadow-lg rounded">
+                        <i class="fas fa-gem fa-3x mb-3 text-primary"></i>
+                        <h4 class="font-weight-bold">{% trans "Exclusive Updates"%}</h4>
+                        <p id="contact">{% trans "Stay ahead of the curve with our exclusive offers and news, directly from our team."%}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Form Section with Animation -->
+        <div class="container shadow p-5 rounded bg-light">
+            <h2 class="text-center mb-4 font-weight-bold animate__animated animate__fadeInDown" style="font-family: 'Arial', sans-serif;">{% trans "Contact Us"%}</h2>
+            {% if success_message %}
+                <div class="alert alert-success" role="alert">
+                    <strong>{% trans "Thank you!"%}</strong> {{ success_message }}
+                </div>
+            {% endif %}
+
+            <form method="post" class="animate__animated animate__fadeInUp">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_name" class="font-weight-bold">{% trans "Your Name"%}</label>
+                    <input type="text" name="name" class="form-control" id="id_name" placeholder="{% trans "Enter your full name"%}" value="{{ form.name.value|default:'' }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_email" class="font-weight-bold">{% trans "Your Email"%}</label>
+                    <input type="email" name="email" class="form-control" id="id_email" placeholder="{% trans "Enter your email"%}" value="{{ form.email.value|default:'' }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_phone" class="font-weight-bold">{% trans "Your Phone Number"%}</label>
+                    <input type="text" name="phone" class="form-control" id="id_phone" placeholder="{% trans "Enter your phone number"%}" value="{{ form.phone.value|default:'' }}">
+                </div>
+                <div class="form-group">
+                    <label for="id_message" class="font-weight-bold">{% trans "Your Message"%}</label>
+                    <textarea name="message" class="form-control" id="id_message" placeholder="{% trans "Write your message here"%}">{{ form.message.value|default:'' }}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block py-2">{% trans "Send Message"%}</button>
+            </form>
+        </div>
+
+        <!-- Social Media Section with Luxurious Design -->
+        <div class="container my-5 text-center">
+            <h3 class="font-weight-bold">{% trans "Connect With Us"%}</h3>
+            <p>{% trans "Follow us on social media to stay updated on the latest news, promotions, and product launches"%}.</p>
+            <div class="social-media-links">
+                <a href="https://www.instagram.com/uzbeautyshop" target="_blank" class="social-icon">
+                    <img src="https://i.pinimg.com/originals/1e/d6/e0/1ed6e0a9e69176a5fdb7e090a1046b86.jpg" alt="Instagram" class="img-fluid">
+                </a>
+                <a href="https://www.facebook.com/uzbeautyshop" target="_blank" class="social-icon">
+                    <img src="https://icon2.cleanpng.com/lnd/20240921/ta/932583ebf815bc0abfb18dddd6344f.webp" alt="Facebook" class="img-fluid">
+                </a>
+                <a href="https://www.telegram.me/uzbeautyshop" target="_blank" class="social-icon">
+                    <img src="https://banner2.cleanpng.com/20180625/oe/aaz6xf1f0.webp" alt="LinkedIn" class="img-fluid">
+                </a>
+            </div>
+        </div>
+
+        <!-- Location Section with Animated Google Map -->
+        <div class="container my-5 text-center">
+            <h3 class="font-weight-bold">{% trans "Visit Us"%}</h3>
+            <p>{% trans "Feel free to stop by at our office anytime. We would love to meet you in person!"%}</p>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243613.00112346792!2d13.0887033!3d52.5331921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b206e1e8be44ed%3A0x422a16e079581056!2zQmVybGluIFJlZnJlLCBGcmFuayBCdWxseSBXYXksIFRlbnN0ZXJl!5e0!3m2!1sen!2sus!4v1674646642090!5m2!1sen!2sus"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+        
+
+    <style>
+        /* Hero Section Styles */
+        .hero-section {
+            position: relative;
+            background: url('/path/to/hero-image.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Icon Boxes for Why Contact Us Section */
+        .icon-box {
+            transition: transform 0.3s ease-in-out;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .icon-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .icon-box i {
+            color: #007bff;
+        }
+
+        .icon-box img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Social Media Section */
+        .social-media-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Google Maps Styling */
+        iframe {
+            border-radius: 10px;
+        }
+
+        .map-container {
+            animation-duration: 2s;
+        }
+
+        /* Media Queries */
+        @media (max-width: 767px) {
+            .hero-section {
+                height: 40vh;
+            }
+        }
+
+        /* Animations */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+    </style>
+{% endblock %}

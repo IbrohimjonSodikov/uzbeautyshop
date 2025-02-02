@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block title %}About Us{% endblock title %}
+
+<body class="bg-light">
+    {% block content %}
+    {% load i18n %}
+    <div class="container-fluid py-5" style="background-color: #f4f6f9; margin-top: 5%;" >
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="display-4 text-primary font-weight-bold mb-4">{% trans "About Us"%}</h2>
+                <p class="lead text-muted">{% trans "Discover our story, mission, and vision as we strive to inspire beauty and confidence around the world."%}</p>
+            </div>
+        </div>
+
+        <!-- Mission & Vision Section -->
+        <div class="row text-center mb-5">
+            <div class="col-md-6 col-12">
+                <div class="card shadow-lg rounded border-0 p-4" style="background-color: #fff; animation: fadeInLeft 1s;">
+                    <div class="card-body">
+                        <h4 class="text-primary font-weight-bold mb-4">{% trans "Our Mission"%}</h4>
+                        <p class="text-muted">{% trans "We aim to empower every individual by providing them with exceptional beauty products that not only enhance their appearance but also boost their confidence. Our commitment is to deliver quality with integrity and passion."%}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="card shadow-lg rounded border-0 p-4" style="background-color: #fff; animation: fadeInRight 1s;">
+                    <div class="card-body">
+                        <h4 class="text-primary font-weight-bold mb-4">{% trans "Our Vision"%}</h4>
+                        <p class="text-muted">{% trans "To lead the beauty industry by creating a lasting impact on the lives of millions, making beauty accessible to all while prioritizing sustainability, inclusivity, and innovation."%}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Creative Values Section -->
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h3 class="display-4 text-primary font-weight-bold mb-4">{% trans "Our Core Values"%}</h3>
+                <p class="lead text-muted mb-4">{% trans "The principles that guide us and keep us grounded in everything we do."%}</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-6 mb-4">
+                <div class="card shadow-lg rounded text-center" style="animation: zoomIn 1s;">
+                    <div class="card-body">
+                        <i class="fas fa-heart fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title text-primary">{% trans "Passion"%}</h5>
+                        <p class="card-text text-muted">{% trans "Driven by passion, we create beauty with heart, focusing on quality and detail in everything we do."%}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="card shadow-lg rounded text-center" style="animation: zoomIn 1.2s;">
+                    <div class="card-body">
+                        <i class="fas fa-globe fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title text-primary">{% trans "Sustainability"%}</h5>
+                        <p class="card-text text-muted">{% trans "We prioritize the planet by embracing sustainable practices in our products and operations."%}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="card shadow-lg rounded text-center" style="animation: zoomIn 1.4s;">
+                    <div class="card-body">
+                        <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title text-primary">{% trans "Inclusivity"%}</h5>
+                        <p class="card-text text-muted">{% trans "We believe in inclusivity, offering beauty solutions for all, regardless of background or identity."%}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <div class="card shadow-lg rounded text-center" style="animation: zoomIn 1.6s;">
+                    <div class="card-body">
+                        <i class="fas fa-cogs fa-3x text-primary mb-3"></i>
+                        <h5 class="card-title text-primary">{% trans "Innovation"%}</h5>
+                        <p class="card-text text-muted">{% trans "Constantly evolving, we push the boundaries of beauty with innovative products and technologies."%}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="row text-center mt-5">
+            <div class="col-12">
+                <h3 class="text-primary font-weight-bold mb-4">{% trans "Join Us in Our Mission"%}</h3>
+                <p class="text-muted mb-4">{% trans "Be a part of our journey as we continue to make a difference in the beauty world. We welcome you to stay connected with us and be part of the change!"%}</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary btn-lg rounded-pill px-4 py-2" style="animation: fadeInUp 1s;">
+                    {% trans "Get in Touch "%}<i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    {% endblock content %}
+</body>

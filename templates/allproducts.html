@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+
+
+<style>
+    .main-content {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1400px;
+        margin: auto;
+        align-items: flex-start;
+    }
+    @media screen and (min-width: 800px) {
+        body {
+            margin-top: 150px;
+        }
+        .close-menu {
+            display: none;
+        }
+    }
+
+    /* Categories Sidebar */
+    .categories {
+        width: 250px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        height: fit-content;
+        flex-shrink: 0;
+    }
+
+    .categories h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .category-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .category-btn {
+        background-color: #f4f4f4;
+        padding: 12px;
+        border-radius: 25px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        display: block;
+        text-decoration: none;
+        color: black;
+    }
+
+    .category-btn:hover, .category-btn.selected {
+        background-color: #007bff;
+        color: white;
+    }
+
+    /* Hamburger Menu for Mobile */
+    .hamburger-menu {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .hamburger-menu .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Mobile View */
+    @media (max-width: 768px) {
+        .hamburger-menu {
+            display: flex;
+        }
+
+        .categories {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            padding: 20px;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .categories.open {
+            transform: translateX(250px);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    /* Products Section */
+    .products-container {
+        flex-grow: 1;
+    }
+
+    .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 products in a row */
+        gap: 20px;
+        width: 100%;
+    }
+
+    .product-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card img {
+        width: 100%;
+        height: 300px; /* Same size for all images */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem;
+        color: #333;
+        margin-top: 10px;
+    }
+
+    .product-card p {
+        font-size: 0.9rem;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .product-card .price {
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #FF5733;
+    }
+    .buy-now {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        margin-top: auto;
+    }
+    .buy-now:hover {
+        background-color: #218838;
+        color: #fff;
+    }
+    @media (max-width: 768px) {
+        .products {
+            grid-template-columns: 1fr;
+        }
+    }
+    @media (min-width: 768px) {
+        .choose-category-info-mobile {
+            display: none;
+        }
+        #delete {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .choose-category-info-mobile {
+            display: block;
+        }
+        .product-card {
+            margin-right: 35px;
+        }
+    }
+</style>
+<div class="main-content">
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="categories">
+        <button class="close-menu">X</button>
+        <h2>{% trans "Categories"%}</h2>
+        <form method="GET" id="category-filter-form">
+            <input type="hidden" name="categories" value="{{ request.GET.categories }}">
+            <div class="category-buttons">
+                {% for category in categories %}
+                    <label class="category-btn {% if category.name == request.GET.categories %}selected{% endif %}">
+                        <span class="category-name" style="width: 100%;">
+                            {% if user_language == 'ru' %}
+                        {{ category.name_ru }}
+                    {% elif user_language == 'uz' %}
+                        {{ category.name_uz }}
+                    {% else %}
+                        {{ category.name }}
+                    {% endif %}
+                        </span>
+                        <input type="hidden" value="{{ category.name }}">
+                    </label>
+                {% endfor %}
+            </div>
+        </form>
+        <a href="{% url 'country_products' "Germany" %}" class="category-btn" style="margin: 10px 0;">{% trans "All German products"%}</a>
+        <a href="{% url 'country_products' "France" %}" class="category-btn" style="margin: 10px 0;">{% trans "All French products"%}</a>
+        <a href="{% url 'country_products' "Italy" %}" class="category-btn" style="margin: 10px 0;">{% trans "All Italian products"%}</a>
+        <a href="{% url 'home' %}" class="category-btn" style="margin: 10px 0;"><i class="fas fa-arrow-left"></i>  {% trans "Back"%}</a>
+        <a href="{% url 'all' %}" class="category-btn" id="delete" style="margin: 10px 0;"><i class="fas fa-home"></i> {% trans "All products"%}</a>
+    </div>
+<div class="products-container">
+    <h2 class="country-header" style="font-size: 30px;"> {% trans "All products" %}</h2>
+    <div class="products">
+        {% for product in products %}
+        <div class="product-card">
+            <a href="{% url 'product_detail' product.pk %}">
+                <img src="{{ product.image1.url }}" alt="{{ product.name }}">
+            </a>
+            <h3>{{ product.name }}</h3>
+            <p>
+                {% if user_language == 'ru' %}
+                    {{ product.productdescription_ru |truncatechars:150 }}
+                {% elif user_language == 'uz' %}
+                    {{ product.productdescription_uz |truncatechars:150 }}
+                {% else %}
+                    {{ product.description |truncatechars:150 }}
+                {% endif %}
+            </p>
+            <p class="price" style="text-decoration: line-through; color: #777;">{{ product.original_price }} sum</p>
+            <p class="price">{{ product.price }} sum</p>
+            <a href="{% url 'product_detail' product.pk %}" class="buy-now">{% trans "Buy Now" %}</a>
+        </div>
+        {% empty %}
+        <p style="text-align: center; font-size: 18px; color: #666;">{% trans "No products found in this category." %}</p>
+        {% endfor %}
+    </div>
+</div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const categoryButtons = document.querySelectorAll(".category-btn");
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
+        const categoriesSidebar = document.querySelector(".categories");
+        const closeMenu = document.querySelector(".close-menu");
+        hamburgerMenu.addEventListener("click", function() {
+            categoriesSidebar.classList.toggle("open");
+        });
+        closeMenu.addEventListener("click", function() {
+            categoriesSidebar.classList.remove("open");
+        });
+        categoryButtons.forEach(button => {
+            button.addEventListener("click", function() {
+                categoryButtons.forEach(otherButton => {
+                    otherButton.classList.remove("selected");
+                });
+                this.classList.add("selected");
+
+                const categoryValue = this.querySelector("input").value;
+                const form = document.getElementById("category-filter-form");
+                form.querySelector("input[name='categories']").value = categoryValue;
+                form.submit();
+            });
+        });
+    });
+</script>
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector('.categories');
+        menu.classList.toggle('open');  // Toggles the menu open/close state
+    }
+</script>
+<style>
+    @media (min-width: 768px) {
+        .choose-category-info-mobile {
+            display: none;  /* Hide this section on desktop */
+        }
+    }
+
+    @media (max-width: 767px) {
+        .choose-category-info-mobile {
+            display: block;  /* Show this section only on mobile */
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const categoryButtons = document.querySelectorAll(".category-btn");
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            // Remove selection from all buttons
+            categoryButtons.forEach(otherButton => {
+                otherButton.classList.remove("selected");
+            });
+            this.classList.add("selected");
+
+            // Get selected category
+            const categoryValue = this.querySelector("input").value;
+            
+            // Update the URL without reloading
+            const url = new URL(window.location);
+            url.searchParams.set('categories', categoryValue);
+            window.history.pushState({}, '', url);
+
+            // Fetch new data without reload
+            fetch(url)
+                .then(response => response.text())
+                .then(html => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newProducts = doc.querySelector(".products-container").innerHTML;
+                    document.querySelector(".products-container").innerHTML = newProducts;
+                })
+                .catch(error => console.error('Error fetching products:', error));
+        });
+    });
+});
+
+</script>
+{% endblock %}

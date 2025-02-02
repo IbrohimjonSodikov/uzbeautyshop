@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load i18n %}
+<style>
+    @media screen and (min-width: 767px) {
+        body {
+            margin-top: 5%;
+        }
+    }
+</style>
+<body>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">{% trans "Your Order History"%}</h1>
+    
+    <!-- Table for order history -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="thead-light">
+                <tr>
+                    <th>{% trans "Order ID"%}</th>
+                    <th>{% trans "Products"%}</th>  <!-- Changed to show product details -->
+                    <th>{% trans "Total Price"%}</th>
+                    <th>{% trans "Order Date"%}</th>
+                    <th>{% trans "Status"%}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in order_data %}
+                    <tr>
+                        <td>{{ data.id }}</td>
+                        <td>
+                            {% for item in data.orderitem_set.all %}
+                                <div>
+                                    <a href="{% url 'product_detail' item.product.id %}">
+                                        {{ item.product.name }} (x{{ item.quantity }})
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </td>
+                        <td>{{ data.total_price }} sum</td>
+                        <td>{{ data.created_at|date:"F j, Y" }}</td>
+                        <td>{{ data.status }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center">{% trans "You have no orders yet."%}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <figure class="text-center">
+        <blockquote class="blockquote">
+            <h4>{% trans "Please, note that if the order status is Pending, it means we received your order but its not delivered to Uzbekistan yet. If the order status is Shipped, it means it has delivered to Uzbekistan. If the status is Delivered, it means you received the product(s). If there is an issue, please don't hesitate to send us a message by clicking Send a message button"%}</h4> 
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            <a href="{% url 'contact' %}" class="btn btn-primary" style="margin-bottom: 100px;">{% trans "Send a message"%}</a>
+            </figcaption>
+    </figure> </div>
+</div>
+</body>
+{% endblock %}
